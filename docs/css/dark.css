@@ -1,0 +1,117 @@
+/*
+ * dark.css
+ *
+ * Color Scheme
+ * https://color.adobe.com/create/color-wheel/
+ *
+ * Color Rule: Shades
+ * #008080 (header text & links -- start color)
+ * #004040 (menu background, footer background)
+ * #00cccc (active links)
+ * #008d8d (menu hover)
+ * #006666 (post meta data)
+ */
+
+/* foreground and background */
+* { background-color: transparent; }
+html, body { background-color: #1f1f1f; color: #c3c3c3; }
+a, a:link, a:visited { color: #008080; }
+a:hover, a:active { color: #00cccc; }
+a svg path, a:link svg path, a:visited svg path { fill: #008080; }
+a:hover svg path, a:active svg path { fill: #00cccc; }
+
+body>header,
+body aside details { background-color: #1f1f1f; }
+body>header .left, body>header .right { background-color: transparent; }
+
+details summary { cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+details summary h1::before { content: "\25B7"; margin-right: 5px; }
+details[open] summary h1::before { content: "\25BD"; margin-right: 5px; }
+
+footer, footer .left, footer .right { background-color: #004040; color: #e0e0e0; }
+
+body>header, body>header a, body>header a:link, body>header a:visited { color: #008080; }
+footer, footer a, footer a:link, footer a:visited { color: #e0e0e0; }
+
+nav#menu,
+nav#menu ul li:hover ul { background-color: #004040; }
+nav#menu, nav#menu a, nav#menu a:link, nav#menu a:visited { color: #e0e0e0; }
+main>nav a.current,
+nav#menu ul li a.current { border-bottom: 2px solid #c3c3c3 ; }
+nav#menu ul li:hover>a { background-color: #008d8d; }
+nav#menu ul li:hover ul a:hover { background-color: #008d8d; color: #e0e0e0; }
+
+main section article { background-color: #222222; }
+article>header>h1,
+article>header>h2 { color: #c3c3c3; }
+article>header>div { color: #006666; }
+
+main a, main a:link, main a:visited,
+article>header>h1 a,
+article>header>h2 a { color: #008080; }
+
+body>header a:hover, body>header a:active,
+body aside a:hover, body aside a:active,
+main a:hover, main a:active { color: #00cccc; }
+
+footer a:hover, footer a:active { color: #3c434e; }
+
+/* borders and shadows */
+nav#menu { border-top-color: #2f2f2f; border-bottom-color: #2f2f2f; }
+nav#menu { box-shadow: 0 2px 5px 0 #0f0f0f; }
+nav#menu>ul>li>ul { box-shadow: 0 2px 5px 0 #0f0f0f; }
+
+main blockquote { border-left-color: #c3c3c3; }
+
+main section article { box-shadow: 0 2px 3px -1px #0f0f0f; }
+body aside details { box-shadow: 0 2px 3px -1px #0f0f0f; }
+footer { box-shadow: 0 -2px 5px 0 #0f0f0f; }
+
+@media all and (max-width : 768px) {
+  nav#menu { border-top-color: #2f2f2f; border-bottom-color: #2f2f2f; }
+  nav#menu { box-shadow: 0 2px 5px 0 #0f0f0f; }
+  nav#menu { background-color: #004040; }
+  nav#menu > .menu_toggle { color: #c3c3c3; }
+
+  nav#menu a, nav#menu a:link, nav#menu a:visited,
+  nav#menu .menu_toggle a, nav#menu .menu_toggle a:link, nav#menu .menu_toggle a:visited { color: #004040; }
+
+  nav#menu > .menu_toggle { box-shadow: 0 2px 5px 0 #0f0f0f; }
+
+  nav#menu [id^=drop]:checked + ul {
+  }
+
+  nav#menu ul li,
+  nav#menu ul li .menu_toggle { color: #004040; background-color: #c3c3c3; }
+
+  nav#menu ul ul .menu_toggle,
+  nav#menu ul ul a { color: #004040; }
+
+  nav#menu ul ul ul a {
+  }
+
+  nav#menu ul li ul li .menu_toggle,
+  nav#menu ul ul a,
+  nav#menu ul ul ul a {
+  }
+
+  nav#menu ul li:hover ul a:hover { background-color: inherit; color: inherit; }
+  nav#menu ul ul { color: #004040; background-color: #c3c3c3; }
+
+  nav#menu ul ul li:hover > ul,
+  nav#menu ul li:hover > ul { background-color: inherit; color: inherit; }
+
+  nav#menu ul ul li {
+  }
+
+  nav#menu ul ul ul li {
+  }
+}
+
+@media all and (max-width : 330px) {
+  nav#menu ul li {
+  }
+}
+
+/* vim: set sw=2 ts=2 :*/

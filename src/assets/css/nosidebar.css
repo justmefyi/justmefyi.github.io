@@ -1,0 +1,21 @@
+/*
+ * nosidebar.css
+ */
+body>aside,
+body>aside details { display: none; }
+
+main { width: 100%; }
+
+main section#entries article {
+  width: calc(100% - 20px);
+  margin: 10px 10px 15px;
+}
+
+main section#post article,
+main section#page article,
+main>section#archive article {
+  width: calc(100% - 20px);
+  margin: 10px 10px 15px;
+}
+
+/* vim: set sw=2 ts=2 :*/

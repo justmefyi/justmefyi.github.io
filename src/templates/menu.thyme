@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')">
+    <nav th:id="(${config.site_menu == 'false'} ? '' : 'menu')" th:fragment="menu (cururi)">
+        <label for="drop" class="menu_toggle" th:unless="${config.site_menu == 'false'}">Menu</label>
+        <input type="checkbox" id="drop" th:unless="${config.site_menu == 'false'}"/>
+        <ul th:class="(${config.site_menu == 'false'} ? '' : 'menu')">
+            <li th:with="linkuri=(|${rootpath}index.html|)">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Home</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}pages.html|)" th:unless="${config.site_menu_submenu_pages == 'false'}">
+                <label for="drop-pages" th:class="(${#strings.equals(cururi, linkuri)} ? 'menu_toggle current' : 'menu_toggle')" th:unless="${config.site_menu == 'false'}">Pages</label>
+                <a th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')" href="#">Pages</a>
+                <input type="checkbox" id="drop-pages" th:unless="${config.site_menu == 'false'}"/>
+                <ul>
+                    <li th:each="i : ${published_pages}"><a th:href="|${rootpath}${i.uri}|" href="#" th:text="${i.title}"></a></li>
+                </ul>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}tags.html|)" th:unless="${config.site_menu_submenu_tags == 'false'}">
+                <label for="drop-tags" th:class="(${#strings.equals(cururi, linkuri)} ? 'menu_toggle current' : 'menu_toggle')" th:unless="${config.site_menu == 'false'}">Tags</label>
+                <a th:class="${#strings.equals(cururi, linkuri)} ? 'current' : ''" href="#">Tags</a>
+                <input type="checkbox" id="drop-tags" th:unless="${config.site_menu == 'false'}"/>
+                <ul>
+                    <li th:each="i : ${alltags}"><a th:href="|${rootpath}tags/${i}.html|" href="#" th:text="${i}"></a></li>
+                </ul>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}travel/|)" th:unless="${config.site_menu_page_travel == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Travel</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}poetry/|)" th:unless="${config.site_menu_page_poetry == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Poetry</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}prose/|)" th:unless="${config.site_menu_page_prose == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Prose</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}reviews/|)" th:unless="${config.site_menu_page_reviews == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Reviews</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}archive.html|)" th:unless="${config.site_menu_page_archive == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Post Archive</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}tags/|)" th:unless="${config.site_menu_page_tags == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Tags</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}about.html|)" th:unless="${config.site_menu_page_about == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">About</a>
+            </li>
+
+            <li th:with="linkuri=(|${rootpath}disclaimer.html|)" th:unless="${config.site_menu_page_disclaimer == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Disclaimer</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

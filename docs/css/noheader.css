@@ -1,0 +1,10 @@
+/*
+ * nofooter.css
+ */
+/* body>aside { height: calc(100% - 30px - 10px - 20px - 8px - 2px - 24px + 42px); } */
+
+body>header,
+body>header .left,
+body>header .right { display: none; }
+
+/* vim: set sw=2 ts=2 :*/

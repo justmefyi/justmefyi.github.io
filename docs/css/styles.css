@@ -1,0 +1,271 @@
+/*
+ * styles.css
+ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Marck+Script');
+
+html { overflow-y: scroll; }
+html, body { font-family: 'Montserrat', sans-serif; font-size: 16px; }
+a { text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6, b, strong,
+body>header, body>header * { font-weight: 700; }
+
+i, em {
+  font-style: italic;
+  letter-spacing: -0.02em;
+  word-spacing: 0.1em;
+}
+em>em {
+  font-style: normal;
+  letter-spacing: 0;
+  word-spacing: 0;
+  text-decoration: underline;
+}
+em>em>em {
+  font-style: italic;
+  letter-spacing: -0.02em;
+  word-spacing: 0.1em;
+  text-decoration: underline;
+}
+/*h1, h2, h3, h4, h5, h6 { font-variant: small-caps; }*/
+.nowrap { white-space: nowrap; }
+
+body>header {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 42px;
+  margin: 0; padding: 0;
+
+  font-family: 'Marck Script', cursive;
+
+  z-index: 40;
+}
+body>header .left {
+  position: absolute;
+  top: 0; left: 0; width: calc(50% - 20px); height: auto;
+  margin: 0; padding: 5px 10px;
+
+  line-height: 32px;
+  font-size: 32px;
+  text-align: left;
+}
+body>header .right {
+  position: absolute;
+  top: 0; right: 0; width: calc(50% - 20px); height: auto;
+  margin: 0; padding: 17px 10px 5px;
+
+  font-size: 20px;
+
+  text-align: right;
+}
+nav#menu {
+  position: fixed;
+  top: 42px; left: 0; width: 100%; height: calc(18px + 12px + 2px);
+  margin: 0; padding: 0;
+
+  z-index: 30;
+
+  font-size: 18px;
+  text-align: left;
+  font-variant: small-caps;
+
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+body>aside {
+  position: absolute;
+  top: calc(42px + 32px); right: 0; width: 220px;
+  height: calc(100% - 42px - 32px - 24px);
+}
+body>aside details,
+body>aside .sidebar {
+  position: relative;
+  top: 0; left: 0; width: calc(100% - 10px - 16px);
+  margin: 10px 15px 10px 5px; padding: 5px;
+
+  display: inline-block;
+}
+body>aside .sidebar {
+  line-height: 1.2em;
+}
+main {
+  position: absolute;
+  top: calc(42px + 32px + 2px); left: 0;
+  width: calc(100% - 200px - 20px - 1px);
+  padding-bottom: 24px;
+}
+main>section#entries article,
+main>section#post article,
+main>section#page article,
+main>section#archive article {
+  position: relative;
+  top: 0; left: 0; width: calc(100% - 15px - 20px - 10px);
+  margin: 10px 5px 15px 10px; padding: 10px 10px;
+
+  display: inline-block;
+
+  font-size: 18px;
+}
+
+article>section.text,
+main p,
+main h1, main h2, main h3,
+main h4, main h5, main h6,
+body aside h1,
+body aside p { line-spacing: 1.5em; margin-bottom: 1em; }
+
+article>section.text,
+main p { text-align: justify; line-height: 1.5em; }
+
+article>section.text dt,
+article>section.text li.dt,
+article>section.text h1,
+article>section.text h2,
+article>section.text h3,
+article>section.text h4,
+article>section.text h5,
+article>section.text h6 { text-align: left; line-height: 1.1em; }
+
+main p:last-child,
+article>section.text { margin-bottom: 0; }
+
+article>section.text ul
+article>section.text ol
+article>section.text dl { text-align: left; }
+
+main h1 { font-size: 1.5em; }
+main h2 { font-size: 1.4em; }
+main h3 { font-size: 1.3em; }
+main h4 { font-size: 1.2em; }
+main h5 { font-size: 1.1em; }
+main h6 { font-size: 1em; }
+
+article>header { margin-bottom: 1em; }
+article>header>h1,
+article>header>h2 { line-spacing: 1em; margin-bottom: 0; }
+article>header>div {
+  margin: 0; padding: 0;
+  line-height: 16px; font-size: 16px;
+}
+article>header .timestamp,
+article>header .author,
+article>header .category,
+article>header .tags { margin: 0; padding: 0 3em 0 5.7em; text-indent: -2.7em; }
+article .smalltext,
+body aside .smalltext { line-height: 14px; font-size: 14px; }
+article img:not(.nocenter) {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+a.icon { text-decoration: none; }
+span.icon32 { font-size: 32px; }
+img.icon32,
+svg.icon32 { width: 32px; height: 32px; vertical-align: top; }
+
+main ul, main ol, main dl, main dl dt, main dl dd,
+body aside ul, body aside ol, body aside dl, body aside dl dt, body aside dl dd { display: block; }
+
+main ul, main ol,
+body aside ul, body aside ol { padding-left: 2em; }
+
+main ul.dl,
+body aside ul.dl { margin-bottom: 1em; padding-left: 0; }
+
+main ul.dl>li.dt>ul:not(.dl),
+body aside ul.dl>li.dt>ul:not(.dl) { padding-left: 1em; }
+
+main ul, main ol, main dl, main ul.dl,
+body aside ul, body aside ol, body aside dl, body aside ul.dl { margin: 0 0 1em; }
+
+body aside ul li ul { margin-bottom: 0; }
+
+main ul.dl ul.dl,
+body aside ul.dl ul.dl { margin: 0 0 1em; }
+
+main ul,
+body aside ul { list-style-type: disc; }
+
+main ul.dl,
+body aside ul.dl { list-style-type: none; }
+
+main ol,
+body aside ol { list-style-type: decimal; }
+
+main ul li, main ol li,
+body aside ul li, body aside ol li { display: list-item; line-height: 1.2em; }
+
+main ul.dl li.dd,
+body aside ul.dl li.dd { display: block; }
+
+main dl>dt, main ul.dl>li.dt,
+body aside dl>dt, body aside ul.dl>li.dt {
+  margin-left: 1em;
+  font-weight: 700;
+  line-height: 1.2em; 
+}
+
+main ul.dl>li.dd,
+body aside ul.dl>li.dd { font-weight: normal; line-height: 1.2em; }
+
+main dl>dd, main ul.dl>li.dd,
+body aside dl>dd, body aside ul.dl>li.dd { margin-left: 2em; font-style: italic; }
+
+main ul.dl>li.dt>ul:not(.dl) li:not(.dd),
+body aside ul.dl>li.dt>ul:not(.dl) li:not(.dd) { margin-left: 0; font-style: normal; }
+
+main ul.dl>li.dt>ul.dl li.dd,
+body aside ul.dl>li.dt>ul.dl li.dd { margin-left: 1em; font-style: italic; }
+
+main ul.dl li.dt { display: inline-block; }
+main .nocol ul.dl li.dt { display: block; }
+
+main blockquote {
+  margin: 0 2em 1em calc(2em - 10px - 2px);
+  padding-left: 10px;
+
+  border-left-width: 2px;
+  border-left-style: solid;
+}
+
+main nav {
+  display: block;
+  height: 30px;
+
+  line-height: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0; left: 0; width: calc(100% - 200px - 20px - 1px); width: 100%; height: 24px;
+  margin: 0; padding: 0;
+
+  z-index: 20;
+
+  border-top-width: 1px;
+  border-top-style: solid;
+  border: 0;
+}
+footer .left {
+  position: absolute;
+  top: 0; left: 0; width: calc(50% - 20px); height: 14px;
+  margin: 0; padding: 5px 10px;
+
+  line-height: 14px;
+  font-size: 14px;
+  text-align: left;
+}
+footer .right {
+  position: absolute;
+  top: 0; right: 0; width: calc(50% - 20px); height: 14px;
+  margin: 0; padding: 5px 10px;
+
+  line-height: 14px;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* vim: set sw=2 ts=2 :*/

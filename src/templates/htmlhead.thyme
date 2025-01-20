@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" th:content="(${config.site_tagline != null} ? ${config.site_tagline} : '')"/>
+<meta name="author" th:content="(${config.site_owner != null} ? ${config.site_owner} : '')" th:if="${config.site_owner_shown}"/>
+<meta name="keywords" th:content="(${config.site_keywords != null} ? ${config.site_keywords} : '')"/>
+<meta name="generator" content="JBake"/>
+
+<th:block th:with="hide_header=(${header == 'false' || config.site_header == 'false'})">
+<th:block th:with="hide_menu=(${menu == 'false' || config.site_menu == 'false'})">
+<th:block th:with="hide_footer=(${footer == 'false' || config.site_footer == 'false'})">
+<th:block th:with="hide_sidebar=(${sidebar == 'false' || config.site_sidebar == 'false'})">
+
+    <th:block th:with="separator=(' &ndash; ')">
+    <th:block th:with="page_title=(${title != null} ? ${title} : (${content.title != null} ? ${content.title} : ''))">
+    <th:block th:with="page_title=(${#strings.isEmpty(page_title) || hide_header} ? ${page_title} : ${page_title} + ${separator})">
+    <th:block th:with="site_title=(${! hide_header && config.site_title != null} ? ${config.site_title} : '')">
+    <th:block th:with="tagline=(${! hide_header && config.site_tagline_htmlhead != 'false' && config.site_tagline != null} ? ${separator} + ${config.site_tagline} : '')">
+        <title th:if="${hide_header}">[[${page_title}]]</title>
+        <title th:unless="${hide_header}">[[${page_title + site_title + tagline}]]</title>
+    </th:block>
+    </th:block>
+    </th:block>
+    </th:block>
+    </th:block>
+
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/bootstrap.min.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/prettify.css|"/>
+
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/reset.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/menu.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/styles.css|"/>
+    <link rel="stylesheet" type="text/css" th:with="site_colors=(${config.site_colors != null} ? ${config.site_colors} : 'dark')" th:href="|${rootpath}css/${site_colors}.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/masonry.css|"/>
+
+    <link th:if="${hide_header}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/noheader.css|"/>
+    <link th:if="${hide_footer}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nofooter.css|"/>
+    <link th:if="${hide_menu}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nomenu.css|"/>
+    <link th:if="${hide_sidebar}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nosidebar.css|"/>
+
+    <th:block th:unless="${hide_header}" th:with="page_logo=(${logo != null} ? ${logo} : 'true'), site_logo=(${config.site_logo_shown != null} ? ${config.site_logo_shown} : 'true'), show_logo=(! ${page_logo == 'false' || site_logo == 'false'})">
+        <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/logo.css|" th:if="${show_logo}"/>
+    </th:block>
+
+    <style th:unless="${hide_sidebar}" type="text/css">
+        body>aside {
+            top: calc([[${hide_header ? 0 : 42}]]px + [[${hide_menu ? 0 : 34}]]px);
+            height: calc(100% - [[${hide_header ? 0 : 42}]]px - [[${hide_menu ? 0 : 34}]]px - [[${hide_footer ? 0 : 24}]]px);
+        }
+    </style>
+
+    <style th:if="${hide_header || hide_menu}" type="text/css">
+        main {
+            top: calc([[${hide_header ? 0 : 42}]]px + [[${hide_menu ? 0 : 34}]]px);
+        }
+    </style>
+
+</th:block>
+</th:block>
+</th:block>
+</th:block>
+
+<script th:src="|${rootpath}js/jquery-1.11.1.min.js|"></script>
+<script th:src="|${rootpath}js/bootstrap.min.js|"></script>
+<script th:src="|${rootpath}js/prettify.js|"></script>
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon" sizes="180x180" th:href="|${rootpath}ico/apple-touch-icon.png?v=1|">
+<link rel="icon" type="image/png" sizes="32x32" th:href="|${rootpath}ico/favicon-32x32.png?v=1|">
+<link rel="icon" type="image/png" sizes="16x16" th:href="|${rootpath}ico/favicon-16x16.png?v=1|">
+<link rel="manifest" th:href="|${rootpath}ico/manifest.json?v=1|">
+<link rel="mask-icon" th:href="|${rootpath}ico/safari-pinned-tab.svg?v=1|" color="#7b7b7b">
+<link rel="shortcut icon" th:href="|${rootpath}favicon.ico?v=1|">
+<meta name="msapplication-config" th:content="|${rootpath}ico/browserconfig.xml?v=1|">
+<meta name="theme-color" content="#1f1f1f">
+
+</head>
+</html>

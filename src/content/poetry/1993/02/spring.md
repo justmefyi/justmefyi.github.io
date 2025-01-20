@@ -1,0 +1,10 @@
+title=Spring
+date=1993-02-04
+type=page
+cat=poetry
+tags=highschool,poetry,haiku,seasons
+status=published
+~~~~~~
+The rain falls gently
+To the forest floor, making
+The trees and plants grow.

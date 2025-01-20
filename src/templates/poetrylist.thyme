@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <th:block th:fragment="poetrylist"
+        th:with="poetrylist=(${ {
+           {'A Poem',                             'poetry/1993/02/a-poem.html'},
+           {'Clouds',                             'poetry/1993/02/clouds.html'},
+           {'Dad',                                'poetry/1993/02/dad.html'},
+           {'Death',                              'poetry/1993/02/death.html'},
+           {'Fall',                               'poetry/1993/02/fall.html'},
+           {'Falling in love is great...',        'poetry/2008/08/falling-in-love-is-great.html'},
+           {'I Believe That...',                  'poetry/1993/02/i-believe-that.html'},
+           {'I Miss',                             'poetry/2016/08/i-miss.html'},
+           {'I Wish...',                          'poetry/2014/09/i-wish.html'},
+           {'I\'m Done',                          'poetry/2015/07/im-done.html'},
+           {'If I Had The Ability',               'poetry/2008/08/if-i-had-the-ability.html'},
+           {'Love Deeply',                        'poetry/2016/02/love-deeply.html'},
+           {'Math',                               'poetry/1993/02/math.html'},
+           {'Memories of My Past',                'poetry/2016/02/memories-of-my-past.html'},
+           {'Mom',                                'poetry/1993/02/mom.html'},
+           {'My Love',                            'poetry/1993/02/my-love.html'},
+           {'My Pain Will Never Stop',            'poetry/2004/08/my-pain-will-never-stop.html'},
+           {'November',                           'poetry/1993/02/november.html'},
+           {'Now, Here We Are',                   'poetry/2016/02/now-here-we-are.html'},
+           {'On Our Pillows',                     'poetry/2016/02/on-our-pillows.html'},
+           {'Owls',                               'poetry/1993/02/owls.html'},
+           {'Save Yourself',                      'poetry/2016/02/save-yourself.html'},
+           {'School',                             'poetry/1993/02/school.html'},
+           {'Searching for lost feelings',        'poetry/2015/01/searching-for-lost-feelings.html'},
+           {'Seasons',                            'poetry/1993/02/seasons.html'},
+           {'Snow',                               'poetry/1993/02/snow.html'},
+           {'Space',                              'poetry/1993/02/space.html'},
+           {'Spring',                             'poetry/1993/02/spring.html'},
+           {'Starting to Start Over',             'poetry/2012/02/starting-to-start-over.html'},
+           {'Summer',                             'poetry/1993/02/summer.html'},
+           {'Sunshine',                           'poetry/1993/02/sunshine.html'},
+           {'Taking a Step Back',                 'poetry/2014/12/taking-a-step-back.html'},
+           {'Teachers',                           'poetry/1993/02/teachers.html'},
+           {'Tears',                              'poetry/2016/02/tears.html'},
+           {'Telephones',                         'poetry/1993/02/telephones.html'},
+           {'The Day and The Night',              'poetry/1993/02/the-day-and-the-night.html'},
+           {'The Girl Named Flo',                 'poetry/1993/02/the-girl-named-flo.html'},
+           {'The Gnome from Rome',                'poetry/1993/02/the-gnome-from-rome.html'},
+           {'The Little Rain Drop',               'poetry/1993/02/the-little-rain-drop.html'},
+           {'The Moon and The Sun',               'poetry/1993/02/the-moon-and-the-sun.html'},
+           {'The Moon',                           'poetry/1993/02/the-moon.html'},
+           {'The Ocean',                          'poetry/1993/02/the-ocean.html'},
+           {'The Old Lady in Glasses',            'poetry/1993/02/the-old-lady-in-glasses.html'},
+           {'The Shadow',                         'poetry/1993/02/the-shadow.html'},
+           {'The Storm',                          'poetry/1993/02/the-storm.html'},
+           {'The Sun',                            'poetry/1993/02/the-sun.html'},
+           {'The Weight We Bear',                 'poetry/2016/08/the-weight-we-bear.html'},
+           {'The Young Lad Named Brad',           'poetry/1993/02/the-young-lad-named-brad.html'},
+           {'The Young Lady Named Maggie',        'poetry/1993/02/the-young-lady-named-maggie.html'},
+           {'Time #2',                            'poetry/1993/02/time2.html'},
+           {'Time #3',                            'poetry/1993/02/time3.html'},
+           {'Time',                               'poetry/1993/02/time.html'},
+           {'War',                                'poetry/1993/02/war.html'},
+           {'We Must Live...',                    'poetry/1993/02/we-must-live.html'},
+           {'What I Know Now',                    'poetry/2017/02/what-i-know-now.html'},
+           {'When God Has Mended Your Heart',     'poetry/2014/08/when-god-has-mended-your-heart.html'},
+           {'Why Did You Put Me There',           'poetry/2016/02/why-did-you-put-me-there.html'},
+           {'Wild West',                          'poetry/1993/02/wild-west.html'},
+           {'Winter',                             'poetry/1993/02/winter.html'},
+           {'You Were More',                      'poetry/2016/02/you-were-more.html'},
+           {'You Will Never Know',                'poetry/2004/08/you-will-never-know.html'}
+        } }),
+        segment=(${segment != null} ? ${segment} : ''),
+        rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''),
+        cururi=(${current_uri} != null ? ${current_uri} : '')">
+
+        <th:block th:if="${#strings.equals(segment, 'sidebar')}">
+            <summary><h1>Poetry <span class="smalltext" th:text="|( ${#lists.size(poetrylist)} )|"/></h1></summary>
+            <ul>
+                <li th:each="p : ${poetrylist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1])}"><a class="smalltext" th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]]</a></li>
+            </ul>
+        </th:block>
+        <th:block th:if="${#strings.equals(segment, 'index')}">
+            <ul class="dl">
+                <th:block th:each="p : ${poetrylist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1])}">
+                    <li class="dt" style="display: block;"><a th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]]</a></li>
+                </th:block>
+            </ul>
+        </th:block>
+    </th:block>
+</body>
+</html>

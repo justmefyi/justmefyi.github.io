@@ -1,0 +1,208 @@
+/*
+ * masonry.css
+ *
+ * Masonry Article Layout
+ * http://w3bits.com/css-masonry/
+ */
+@media only screen and (min-width: 1100px) {
+  .narrowonly { display: none !important; }
+  main section#entries {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  main section#post,
+  main section#page,
+  main>section#archive {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  main section#post article section.text,
+  main section#page article section.text {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  main section#post article section.addcol,
+  main section#page article section.addcol {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  main section#post article section.addcol section.col,
+  main section#page article section.addcol section.col {
+  }
+  main>section#archive article section.text {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main>section#archive article section.addcol {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  main section#entries {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  main section#post,
+  main section#page,
+  main>section#archive {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  main section#post article section.text,
+  main section#page article section.text {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main section#post article section.addcol,
+  main section#page article section.addcol {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main>section#archive article section.text {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main>section#archive article section.addcol {
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+    column-count: 5;
+    -moz-column-gap: 50px;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
+  }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .narrowonly { display: none !important; }
+  main section {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+@media all and (max-width : 768px) {
+  .narrowonly { display: inline !important; }
+}
+@media only screen and (max-width: 700px) {
+  header .right, body aside { display: none; }
+  header .left { width: calc(100% - 20px); }
+  main, footer { width: 100%; }
+  main section {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+  }
+  footer .left { width: calc(30% - 20px); }
+  footer .right { width: calc(70% - 20px); }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main { padding-bottom: 38px; }
+  footer .left { width: calc(25% - 20px); }
+  footer .right { width: calc(75% - 20px); }
+  footer, footer .right { height: 38px; }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+@media only screen and (max-width: 350px) {
+  header { height: 30px; }
+  header .left {
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+  }
+  nav#menu { top: 30px; }
+  main { top: calc(20px + 10px + 20px + 8px + 2px); }
+  main section#entries article {
+    width: calc(100% - 10px);
+    margin: 10px 0 10px 0;
+    padding: 5px 5px;
+  }
+  main .nocol {
+    -moz-column-count: 1 !important;
+    -webkit-column-count: 1 !important;
+    column-count: 1 !important;
+  }
+}
+
+/* vim: set sw=2 ts=2 :*/

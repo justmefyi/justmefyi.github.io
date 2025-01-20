@@ -1,0 +1,11 @@
+/*
+ * nomenu.css
+ */
+body>nav,
+nav#menu { display: none; }
+
+/* body>aside { top: calc(30px + 10px); } */
+
+/* main { top: calc(30px + 10px); } */
+
+/* vim: set sw=2 ts=2 :*/

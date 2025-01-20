@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<th:block th:replace="htmlhead.thyme::head (header='false',footer='false',sidebar='false',menu='false',logo='false')"/>
+</head>
+<body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(${content.uri})">
+    <main>
+        <section id="page">
+            <article th:with="tagslist=(${#sets.toSet({})})">
+                <!--/* build the list of arrays of tag info */-->
+                <th:block th:if="${content.tags != null && ! #lists.isEmpty(content.tags)}">
+                    <th:block th:each="t : ${#lists.sort(#lists.toList(content.tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
+                        <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
+                        <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
+
+                        <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"/>
+
+                        <th:block th:text="${tagslist.add(entry)}" th:remove="all"/>
+                    </th:block>
+                </th:block>
+                <header>
+                    <h1>[[${content.title}]]</h1>
+                    <div class="timestamp"><time th:datetime="${#dates.format(content.date, 'yyyy-MM-dd')}">[[${#dates.format(content.date, 'dd MMMM yyyy')}]]</time></div>
+                    <div class="author" th:if="${config.site_author_page_shown}" th:with="page_author=(${content.author != null} ? ${content.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${page_author}]]</div>
+                    <div class="category" th:if="${content.cat != null && ! #strings.isEmpty(content.cat)}">Category: [[${#strings.capitalizeWords(content.cat)}]]</div>
+                    <div class="tags" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
+                        <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
+                    </div>
+                </header>
+                <th:block th:if="${content.body != null && #strings.length(content.body) > 24}">
+                    <th:block th:with="start=(${#strings.substring(content.body, 0, 24)}), end=(${#strings.substring(content.body, #strings.length(content.body) - 11, #strings.length(content.body) - 1)})">
+                        <th:block th:if="${#strings.startsWith(start, '<section class=') && #strings.contains(start, 'addcol') && end == '</section>'}">
+                            <th:block th:utext="${content.body}"/>
+                        </th:block>
+                        <th:block th:unless="${#strings.startsWith(start, '<section class=') && #strings.contains(start, 'addcol') && end == '</section>'}">
+                            <section th:class="(${#strings.length(content.body) < 512} ? 'text nocol' : 'text')">[(${content.body})]</section>
+                        </th:block>
+                    </th:block>
+                </th:block>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

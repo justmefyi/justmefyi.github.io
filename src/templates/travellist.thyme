@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <th:block th:fragment="travellist"
+        th:with="travellist=(${ {
+           {'A Visit To Babi Yar',                'travel/1994/02/a-visit-to-babi-yar.html'},
+           {'Touring Russia',                     'travel/1994/02/touring-russia.html'}
+        } }),
+        segment=(${segment != null} ? ${segment} : ''),
+        rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''),
+        cururi=(${current_uri} != null ? ${current_uri} : '')">
+
+        <th:block th:if="${#strings.equals(segment, 'sidebar')}">
+            <summary><h1>Travel <span class="smalltext" th:text="|( ${#lists.size(travellist)} )|"/></h1></summary>
+            <ul>
+                <li th:each="p : ${travellist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1])}"><a class="smalltext" th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]]</a></li>
+            </ul>
+        </th:block>
+        <th:block th:if="${#strings.equals(segment, 'index')}">
+            <ul class="dl">
+                <th:block th:each="p : ${travellist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1])}">
+                    <li class="dt" style="display: block;"><a th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]]</a></li>
+                </th:block>
+            </ul>
+        </th:block>
+    </th:block>
+</body>
+</html>
