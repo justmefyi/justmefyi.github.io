@@ -16,7 +16,7 @@
     <th:block th:with="separator=(' &ndash; ')">
     <th:block th:with="page_title=(${title != null} ? ${title} : (${content.title != null} ? ${content.title} : ''))">
     <th:block th:with="page_title=(${#strings.isEmpty(page_title) || hide_header} ? ${page_title} : ${page_title} + ${separator})">
-    <th:block th:with="site_title=(${! hide_header && config.site_title != null} ? ${config.site_title} : '')">
+    <th:block th:with="site_title=(${! hide_header && config.site_title != null} ? ${#strings.arrayJoin(config.site_title, ', ')} : '')">
     <th:block th:with="tagline=(${! hide_header && config.site_tagline_htmlhead != 'false' && config.site_tagline != null} ? ${separator} + ${config.site_tagline} : '')">
         <title th:if="${hide_header}">[[${page_title}]]</title>
         <title th:unless="${hide_header}">[[${page_title + site_title + tagline}]]</title>

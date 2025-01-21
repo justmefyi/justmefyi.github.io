@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')">
     <header th:fragment="header">
-        <div class="left" th:with="page_title=(${title != null} ? '|: ${title}|' : ''), site_title=(${config.site_title != null} ? ${config.site_title} : '')"><a th:href="|${rootpath}index.html|" th:text="|${site_title}${page_title}|"></a></div>
+        <div class="left" th:with="page_title=(${title != null} ? '|: ${title}|' : ''), site_title=(${config.site_title != null} ? ${#strings.arrayJoin(config.site_title, ', ')} : '')"><a th:href="|${rootpath}index.html|" th:text="|${site_title}${page_title}|"></a></div>
         <div class="right" th:with="tagline=(${config.site_tagline != null} ? ${config.site_tagline} : '')" th:unless="${config.site_tagline_header == 'false'}">[[${tagline}]]</div>
     </header>
 </body>
