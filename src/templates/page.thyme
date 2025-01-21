@@ -12,7 +12,7 @@
         <section id="page">
             <article th:with="tagslist=(${#sets.toSet({})})">
                 <!--/* build the list of arrays of tag info */-->
-                <th:block th:if="${content.tags != null && ! #lists.isEmpty(content.tags)}">
+                <th:block th:if="${content.tags != null && ! #arrays.isEmpty(content.tags)}">
                     <th:block th:each="t : ${#lists.sort(#lists.toList(content.tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
                         <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
                         <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
