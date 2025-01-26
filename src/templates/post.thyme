@@ -12,8 +12,10 @@
         <section id="post">
             <article th:with="tagslist=(${#sets.toSet({})})">
                 <!--/* build the list of arrays of tag info */-->
-                <th:block th:if="${content.tags != null && ! #lists.isEmpty(content.tags)}">
-                    <th:block th:each="t : ${#lists.sort(#lists.toList(content.tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
+                <th:block th:if="${content.tags != null && ! #lists.isEmpty(#lists.toList(content.tags))}">
+                    <th:block th:each="t : ${#lists.sort(#lists.toList(content.tags))}"
+                                th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${#lists.toList({})})">
+
                         <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
                         <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
 
@@ -25,7 +27,9 @@
                 <header>
                     <h1>[[${content.title}]]</h1>
                     <div class="timestamp"><time th:datetime="${#dates.format(content.date, 'yyyy-MM-dd')}">[[${#dates.format(content.date, 'dd MMMM yyyy')}]]</time></div>
-                    <div class="author" th:if="${config.site_author_post_shown}" th:with="post_author=(${content.author != null} ? ${content.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${post_author}]]</div>
+                    <div class="author" th:if="${config.site_author_post_shown}"
+                            th:with="post_author=(${content.author != null} ? ${content.author}
+                                    : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${post_author}]]</div>
                     <div class="tags" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
                         <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
                     </div>

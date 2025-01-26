@@ -10,10 +10,12 @@
 
     <main th:with="trunc_indicator=(${config.index_truncation_indicator != null} ? ${config.index_truncation_indicator} : '...')">
         <section id="entries" th:with="max_length=(${config.index_snippet_length != null} ? ${config.index_snippet_length} : 256)">
-            <article th:each="p : ${published_content}" th:with="tagslist=(${#sets.toSet({})})" th:if="${p != null && (#strings.equalsIgnoreCase(p.type, 'post') || #strings.equalsIgnoreCase(p.type, 'page')) && p.excluded != 'true'}">
+            <article th:each="p : ${published_content}" th:with="tagslist=(${#sets.toSet({})})"
+                        th:if="${p != null && (#strings.equalsIgnoreCase(p.type, 'post') || #strings.equalsIgnoreCase(p.type, 'page')) && p.excluded != 'true'}">
                 <!--/* build the list of arrays of tag info */-->
-                <th:block th:if="${p.tags != null && ! #lists.isEmpty(p.tags)}">
-                    <th:block th:each="t : ${#lists.sort(#lists.toList(p.tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
+                <th:block th:if="${p.tags != null && ! #lists.isEmpty(#lists.toList(p.tags))}">
+                    <th:block th:each="t : ${#lists.sort(#lists.toList(p.tags))}"
+                                th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${#lists.toList({})})">
                         <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
                         <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
 
