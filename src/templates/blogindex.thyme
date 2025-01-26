@@ -37,7 +37,7 @@
                 <section class="text" th:unless="${#strings.length(p.body) < max_length}" th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"/>
             </article>
         </section>
-        <nav th:replace="~{newpagination.thyme::newpagination}"/>
+        <nav th:replace="~{pagination.thyme::pagination}"/>
     </main>
 
     <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"/>
