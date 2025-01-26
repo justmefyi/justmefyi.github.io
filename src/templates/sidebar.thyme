@@ -4,7 +4,7 @@
     <aside th:fragment="sidebar" th:unless="${config.site_sidebar == 'false'}" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), cururi=(${current_uri} != null ? ${current_uri} : ''), tags_shown=(${tags_shown != null} ? ${tags_shown} : (${config.site_sidebar_tags != null} ? ${config.site_sidebar_tags} : false))">
         <details open th:if="${config.site_sidebar_menu}">
             <summary><h1>Menu</h1></summary>
-            <div th:include="menu.thyme::menu (${cururi})"/>
+            <div th:include="~{menu.thyme::menu (${cururi})}"/>
         </details>
 
         <!--/* use for generating lists for manual inclusion below
@@ -26,13 +26,14 @@
         </details>
         */-->
 
-        <details th:insert="travellist.thyme::travellist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})" th:if="${config.site_sidebar_pages_travel}"/>
+        <!--/*
+        <details th:insert="~{travellist.thyme::travellist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})}" th:if="${config.site_sidebar_pages_travel}"/>
 
-        <details th:insert="poetrylist.thyme::poetrylist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})" th:if="${config.site_sidebar_pages_poetry}"/>
+        <details th:insert="~{poetrylist.thyme::poetrylist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})}" th:if="${config.site_sidebar_pages_poetry}"/>
 
-        <details th:insert="proselist.thyme::proselist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})" th:if="${config.site_sidebar_pages_prose}"/>
+        <details th:insert="~{proselist.thyme::proselist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})}" th:if="${config.site_sidebar_pages_prose}"/>
 
-        <details th:insert="reviewslist.thyme::reviewslist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})" th:if="${config.site_sidebar_pages_reviews}"/>
+        <details th:insert="~{reviewslist.thyme::reviewslist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})}" th:if="${config.site_sidebar_pages_reviews}"/>
 
         <details open th:if="${config.site_sidebar_pages_cat}" th:with="published_cats=${#sets.toSet({})}, uncat_pages=${{}}">
             <summary><h1>Pages by Category</h1></summary>
@@ -57,7 +58,8 @@
             </ul>
         </details>
 
-        <details th:insert="tagslist.thyme::tagslist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})" th:if="${tags_shown}"/>
+        <details th:insert="~{tagslist.thyme::tagslist (segment='sidebar', current_uri=${current_uri}, rootpath=${rootpath})}" th:if="${tags_shown}"/>
+        */-->
 
         <!--/*
         <details th:if="${tags_shown}" th:with="published_tags=${#sets.toSet({})}, ptsize=${#lists.size(published_posts)}">
@@ -99,7 +101,7 @@
             </ul>
         </details>
 
-        <div class="sidebar" th:include="copyright.thyme::copyright" th:if="${config.site_sidebar_copyright}"/>
+        <div class="sidebar" th:include="~{copyright.thyme::copyright}" th:if="${config.site_sidebar_copyright}"/>
     </aside>
 </body>
 </html>

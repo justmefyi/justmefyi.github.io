@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<th:block th:replace="htmlhead.thyme::head (header='false',footer='false',sidebar='false',menu='false',logo='false')"/>
+<th:block th:replace="~{htmlhead.thyme::head (header='false',footer='false',sidebar='false',menu='false',logo='false')}"/>
 </head>
 <body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(${content.uri})">
     <main>

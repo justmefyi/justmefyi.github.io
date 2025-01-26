@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="htmlhead.thyme::head (title=${content.title})"/>
+<head th:replace="~{htmlhead.thyme::head (title=${content.title})}"/>
 <body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}/prose/index.html|)">
-    <header th:replace="header.thyme::header (title=null)"/>
+    <header th:replace="~{header.thyme::header (title=null)}"/>
 
     <div th:unless="${config.site_menu == 'false'}">
-        <nav th:replace="menu.thyme::menu (${current_uri})"/>
+        <nav th:replace="~{menu.thyme::menu (${current_uri})}"/>
     </div>
 
     <main th:with="trunc_indicator=(${config.index_truncation_indicator != null} ? ${config.index_truncation_indicator} : '...'),
@@ -44,8 +44,8 @@
         </section>
     </main>
 
-    <aside th:replace="sidebar.thyme::sidebar (current_uri=${current_uri})"/>
+    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"/>
 
-    <footer th:replace="footer.thyme::footer"/>
+    <footer th:replace="~{footer.thyme::footer}"/>
 </body>
 </html>
