@@ -1,40 +1,83 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:with="page_num=(${currentPageNumber != null} ? ${currentPageNumber} : ''), title=null">
+<html xmlns:th="http://www.thymeleaf.org"
+        th:with="page_num=(${currentPageNumber != null}
+                        ? ${currentPageNumber}
+                        : ''),
+                title=null">
 <head th:replace="~{htmlhead.thyme::head (title=${title})}"></head>
-<body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}index.html|)">
-    <header th:replace="~{header.thyme::header (title=${title})}" th:with=""></header>
+<body onload="prettyPrint()"
+            th:with="rootpath=(${content.rootpath != null}
+                            ? ${content.rootpath}
+                            : ''),
+                    current_uri=(|${rootpath}index.html|)">
+    <header th:replace="~{header.thyme::header (title=${title})}"
+            th:with=""></header>
 
     <div th:unless="${config.site_menu == 'false'}">
         <nav th:replace="~{menu.thyme::menu (${current_uri})}"></nav>
     </div>
 
-    <main th:with="trunc_indicator=(${config.index_truncation_indicator != null} ? ${config.index_truncation_indicator} : '...')">
-        <section id="entries" th:with="max_length=(${config.index_snippet_length != null} ? ${config.index_snippet_length} : 256)">
-            <article th:each="p : ${published_content}" th:with="tagslist=(${#sets.toSet({})})"
-                        th:if="${p != null && (#strings.equalsIgnoreCase(p.type, 'post') || #strings.equalsIgnoreCase(p.type, 'page')) && p.excluded != 'true'}">
+    <main th:with="trunc_indicator=(${config.index_truncation_indicator != null}
+                        ? ${config.index_truncation_indicator}
+                        : '...')">
+        <section id="entries"
+                    th:with="max_length=(${config.index_snippet_length != null}
+                            ? ${config.index_snippet_length}
+                            : 256)">
+            <article th:each="p : ${published_content}"
+                        th:with="tagslist=(${#sets.toSet({})})"
+                        th:if="${p != null
+                                && (#strings.equalsIgnoreCase(p.type, 'post')
+                                        || #strings.equalsIgnoreCase(p.type, 'page'))
+                                && p.excluded != 'true'}">
                 <!--/* build the list of arrays of tag info */-->
                 <th:block th:if="${p.tags != null && ! #lists.isEmpty(#lists.toList(p.tags))}">
                     <th:block th:each="t : ${#lists.sort(#lists.toList(p.tags))}"
-                                th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${#lists.toList({})})">
-                        <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"></th:block>
-                        <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"></th:block>
+                                th:if="${t != null && ! #strings.isEmpty(t)}"
+                                th:with="entry=(${#lists.toList({})})">
+                        <th:block th:if="${#strings.startsWith(t, '#')}"
+                                    th:utext="${entry.add(t)}"
+                                    th:remove="all"></th:block>
+                        <th:block th:if="${! #strings.startsWith(t, '#')}"
+                                    th:text="${entry.add('#' + t)}"
+                                    th:remove="all"></th:block>
 
-                        <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"></th:block>
+                        <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}"
+                                    th:remove="all"></th:block>
 
-                        <th:block th:text="${tagslist.add(entry)}" th:remove="all"></th:block>
+                        <th:block th:text="${tagslist.add(entry)}"
+                                    th:remove="all"></th:block>
                     </th:block>
                 </th:block>
                 <header>
                     <h1><a th:href="|${rootpath}${p.uri}|" href="href">[[${p.title}]]</a></h1>
-                    <div class="timestamp"><time th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date, 'dd MMMM yyyy')}]]</time></div>
-                    <div class="author" th:if="${config.site_author_index_shown}" th:with="p_author=(${p.author != null} ? ${p.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${p_author}]]</div>
-                    <div class="category" th:if="${p.cat != null && ! #strings.isEmpty(p.cat)}">Category: [[${#strings.capitalizeWords(p.cat)}]]</div>
-                    <div class="tags" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
-                        <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
+                    <div class="timestamp"><time
+                                    th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date,
+                                            'dd MMMM yyyy')}]]</time></div>
+                    <div class="author"
+                            th:if="${config.site_author_index_shown}"
+                            th:with="p_author=(${p.author != null}
+                                    ? ${p.author}
+                                    : (${config.site_owner_shown && config.site_owner != null}
+                                            ? ${config.site_owner}
+                                            : ''))">[[${p_author}]]</div>
+                    <div class="category"
+                                th:if="${p.cat != null
+                                        && ! #strings.isEmpty(p.cat)}">Category:
+                                                [[${#strings.capitalizeWords(p.cat)}]]</div>
+                    <div class="tags"
+                                th:unless="${tagslist == null
+                                        || #sets.isEmpty(tagslist)}">Tags:
+                        <th:block th:each="t,i : ${tagslist}"><a
+                                        th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block
+                                                th:unless="${i.last}">, </th:block></th:block>
                     </div>
                 </header>
-                <section class="text" th:if="${#strings.length(p.body) < max_length}" th:utext="${p.body}"></section>
-                <section class="text" th:unless="${#strings.length(p.body) < max_length}" th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"></section>
+                <section class="text" th:if="${#strings.length(p.body) < max_length}"
+                            th:utext="${p.body}"></section>
+                <section class="text" th:unless="${#strings.length(p.body) < max_length}"
+                            th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))}
+                                    + ${trunc_indicator}"></section>
             </article>
         </section>
         <nav th:replace="~{pagination.thyme::pagination}"></nav>

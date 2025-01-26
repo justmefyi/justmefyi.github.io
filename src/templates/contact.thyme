@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-    <span class="nowrap" th:fragment="contact"><a th:href="|${config.site_contact_method}${config.site_contact_target}|" th:text="${config.site_contact_title}"></a></span>
+    <span class="nowrap" th:fragment="contact"><a
+                th:href="|${config.site_contact_method}${config.site_contact_target}|"
+                th:text="${config.site_contact_title}"></a></span>
 </body>
 </html>

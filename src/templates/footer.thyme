@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-    <footer th:fragment="footer" th:unless="${config.site_footer == 'false'}">
+    <footer th:fragment="footer"
+                th:unless="${config.site_footer == 'false'}">
         <span th:if="${config.site_footer_contact || config.site_footer_pagination}">
             <div class="left">
                 <span th:if="${config.site_footer_contact && config.site_footer_pagination}">
