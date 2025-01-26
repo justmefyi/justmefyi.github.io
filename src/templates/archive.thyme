@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:with="title=('Post Archive')">
+<html xmlns:th="http://www.thymeleaf.org"
+            th:with="title=('Post Archive')">
 <head th:replace="~{htmlhead.thyme::head (title=${title})}"></head>
-<body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}archive.html|)">
+<body onload="prettyPrint()"
+            th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''),
+                    current_uri=(|${rootpath}archive.html|)">
     <header th:replace="~{header.thyme::header (title=null)}"></header>
 
     <div th:unless="${config.site_menu == 'false'}">
@@ -9,9 +12,13 @@
     </div>
 
     <main th:with="plist=${#lists.toList({})}">
-        <th:block th:each="p : ${all_content}" th:text="${plist.add(p)}" th:remove="all"
-            th:if="${p != null && #strings.equalsIgnoreCase(p.status, 'published') &&
-                     (#strings.equalsIgnoreCase(p.type, 'post') || #strings.equalsIgnoreCase(p.type, 'page')) && p.excluded != 'true'}"/>
+        <th:block th:each="p : ${all_content}"
+                    th:text="${plist.add(p)}"
+                    th:remove="all"
+                    th:if="${p != null && #strings.equalsIgnoreCase(p.status, 'published')
+                            && (#strings.equalsIgnoreCase(p.type, 'post')
+                                    || #strings.equalsIgnoreCase(p.type, 'page'))
+                            && p.excluded != 'true'}"/>
         <section id="archive">
             <article>
                 <header>
@@ -19,25 +26,43 @@
                 </header>
                 <section th:class="(${#lists.size(plist) < 5} ? 'text nocol' : 'text')">
                     <ul class="dl">
-                        <th:block th:each="p : ${plist}" th:with="tagslist=(${#sets.toSet({})})">
+                        <th:block th:each="p : ${plist}"
+                                    th:with="tagslist=(${#sets.toSet({})})">
                             <!--/* build the list of arrays of tag info */-->
                             <th:block th:if="${p.tags != null}">
-                                <th:block th:each="t: ${#lists.sort(#lists.toList(p.tags))}" th:with="entry=(${ {} })">
-                                    <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"></th:block>
-                                    <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"></th:block>
+                                <th:block th:each="t: ${#lists.sort(#lists.toList(p.tags))}"
+                                            th:with="entry=(${#lists.toList({})})">
+                                    <th:block th:if="${#strings.startsWith(t, '#')}"
+                                                th:utext="${entry.add(t)}"
+                                                th:remove="all"></th:block>
+                                    <th:block th:if="${! #strings.startsWith(t, '#')}"
+                                                th:text="${entry.add('#' + t)}"
+                                                th:remove="all"></th:block>
 
-                                    <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"></th:block>
+                                    <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}"
+                                                th:remove="all"></th:block>
 
-                                    <th:block th:text="${tagslist.add(entry)}" th:remove="all"></th:block>
+                                    <th:block th:text="${tagslist.add(entry)}"
+                                                th:remove="all"></th:block>
                                 </th:block>
                             </th:block>
                             <li class="dt"><a th:href="|${rootpath}${p.uri}|" href="#">[[${p.title}]]</a>
                                 <ul class="dl smalltext">
-                                    <li class="dd"><time th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date, 'dd MMMM yyyy')}]]</time></li>
-                                    <li class="dd" th:if="${config.site_author_archive_shown}" th:with="p_author=(${p.author != null} ? ${p.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${p_author}]]</li>
-                                    <li class="dd" th:if="${p.cat != null && ! #strings.isEmpty(p.cat)}">Category: [[${#strings.capitalizeWords(p.cat)}]]</li>
+                                    <li class="dd"><time
+                                                th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date,
+                                                        'dd MMMM yyyy')}]]</time></li>
+                                    <li class="dd" th:if="${config.site_author_archive_shown}"
+                                                th:with="p_author=(${p.author != null}
+                                                         ? ${p.author}
+                                                         : (${config.site_owner_shown && config.site_owner != null}
+                                                                ? ${config.site_owner}
+                                                                : ''))">[[${p_author}]]</li>
+                                    <li class="dd" th:if="${p.cat != null && ! #strings.isEmpty(p.cat)}">Category:
+                                                [[${#strings.capitalizeWords(p.cat)}]]</li>
                                     <li class="dd" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
-                                        <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
+                                        <th:block th:each="t,i : ${tagslist}"><a
+                                                th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block
+                                                        th:unless="${i.last}">, </th:block></th:block>
                                     </li>
                                 </ul>
                             </li>
