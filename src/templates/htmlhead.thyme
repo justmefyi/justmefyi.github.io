@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')">
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" th:content="(${config.site_tagline != null} ? ${config.site_tagline} : '')"/>
-<meta name="author" th:content="(${config.site_owner != null} ? ${config.site_owner} : '')" th:if="${config.site_owner_shown}"/>
-<meta name="keywords" th:content="(${config.site_keywords != null} ? ${config.site_keywords} : '')"/>
-<meta name="generator" content="JBake"/>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+<meta name="description" th:content="(${config.site_tagline != null} ? ${config.site_tagline} : '')"></meta>
+<meta name="author" th:content="(${config.site_owner != null} ? ${config.site_owner} : '')" th:if="${config.site_owner_shown}"></meta>
+<meta name="keywords" th:content="(${config.site_keywords != null} ? ${config.site_keywords} : '')"></meta>
+<meta name="generator" content="JBake"></meta>
 
 <th:block th:with="hide_header=(${header == 'false' || config.site_header == 'false'})">
 <th:block th:with="hide_menu=(${menu == 'false' || config.site_menu == 'false'})">
@@ -26,22 +26,22 @@
     </th:block>
     </th:block>
 
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/bootstrap.min.css|"/>
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/prettify.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/bootstrap.min.css|"></link>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/prettify.css|"></link>
 
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/reset.css|"/>
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/menu.css|"/>
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/styles.css|"/>
-    <link rel="stylesheet" type="text/css" th:with="site_colors=(${config.site_colors != null} ? ${config.site_colors} : 'dark')" th:href="|${rootpath}css/${site_colors}.css|"/>
-    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/masonry.css|"/>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/reset.css|"></link>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/menu.css|"></link>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/styles.css|"></link>
+    <link rel="stylesheet" type="text/css" th:with="site_colors=(${config.site_colors != null} ? ${config.site_colors} : 'dark')" th:href="|${rootpath}css/${site_colors}.css|"></link>
+    <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/masonry.css|"></link>
 
-    <link th:if="${hide_header}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/noheader.css|"/>
-    <link th:if="${hide_footer}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nofooter.css|"/>
-    <link th:if="${hide_menu}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nomenu.css|"/>
-    <link th:if="${hide_sidebar}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nosidebar.css|"/>
+    <link th:if="${hide_header}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/noheader.css|"></link>
+    <link th:if="${hide_footer}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nofooter.css|"></link>
+    <link th:if="${hide_menu}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nomenu.css|"></link>
+    <link th:if="${hide_sidebar}" rel="stylesheet" type="text/css" th:href="|${rootpath}css/nosidebar.css|"></link>
 
     <th:block th:unless="${hide_header}" th:with="page_logo=(${logo != null} ? ${logo} : 'true'), site_logo=(${config.site_logo_shown != null} ? ${config.site_logo_shown} : 'true'), show_logo=(! ${page_logo == 'false' || site_logo == 'false'})">
-        <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/logo.css|" th:if="${show_logo}"/>
+        <link rel="stylesheet" type="text/css" th:href="|${rootpath}css/logo.css|" th:if="${show_logo}"></link>
     </th:block>
 
     <style th:unless="${hide_sidebar}" type="text/css">

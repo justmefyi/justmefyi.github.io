@@ -70,7 +70,7 @@
         cururi=(${current_uri} != null ? ${current_uri} : '')">
 
         <th:block th:if="${#strings.equals(segment, 'sidebar')}">
-            <summary><h1>Poetry <span class="smalltext" th:text="|( ${#lists.size(poetrylist)} )|"/></h1></summary>
+            <summary><h1>Poetry <span class="smalltext" th:text="|( ${#lists.size(poetrylist)} )|"></span></h1></summary>
             <ul>
                 <li th:each="p : ${poetrylist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1])}"><a class="smalltext" th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]]</a></li>
             </ul>

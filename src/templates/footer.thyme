@@ -5,20 +5,20 @@
         <span th:if="${config.site_footer_contact || config.site_footer_pagination}">
             <div class="left">
                 <span th:if="${config.site_footer_contact && config.site_footer_pagination}">
-                    <div class="left" th:include="~{contact.thyme::contact}"/>
-                    <div class="right" th:include="~{pagination.thyme::pagination}"/>
+                    <div class="left" th:include="~{contact.thyme::contact}"></div>
+                    <div class="right" th:include="~{pagination.thyme::pagination}"></div>
                 </span>
                 <span th:if="${config.site_footer_contact && ! config.site_footer_pagination}">
-                    <span th:replace="~{contact.thyme::contact}"/>
+                    <span th:replace="~{contact.thyme::contact}"></span>
                 </span>
                 <span th:if="${! config.site_footer_contact && config.site_footer_pagination}">
-                    <span th:replace="~{pagination.thyme::pagination}"/>
+                    <span th:replace="~{pagination.thyme::pagination}"></span>
                 </span>
             </div>
-            <div class="right" th:include="~{copyright.thyme::copyright}"/>
+            <div class="right" th:include="~{copyright.thyme::copyright}"></div>
         </span>
         <span th:if="${! config.site_footer_contact && ! config.site_footer_pagination}">
-            <div class="left" th:include="~{copyright.thyme::copyright}"/>
+            <div class="left" th:include="~{copyright.thyme::copyright}"></div>
         </span>
     </footer>
 </body>

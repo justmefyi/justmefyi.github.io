@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{htmlhead.thyme::head (title=${content.title})}"/>
+<head th:replace="~{htmlhead.thyme::head (title=${content.title})}"></head>
 <body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}/prose/index.html|)">
-    <header th:replace="~{header.thyme::header (title=null)}"/>
+    <header th:replace="~{header.thyme::header (title=null)}"></header>
 
     <div th:unless="${config.site_menu == 'false'}">
-        <nav th:replace="~{menu.thyme::menu (${current_uri})}"/>
+        <nav th:replace="~{menu.thyme::menu (${current_uri})}"></nav>
     </div>
 
     <main th:with="trunc_indicator=(${config.index_truncation_indicator != null} ? ${config.index_truncation_indicator} : '...'),
@@ -21,12 +21,12 @@
                 <!--/* build the list of arrays of tag info */-->
                 <th:block th:if="${p.tags != null && ! #lists.isEmpty(#lists.toList(p.tags))}">
                     <th:block th:each="t : ${#lists.sort(#lists.toList(p.tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
-                        <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
-                        <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
+                        <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"></th:block>
+                        <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"></th:block>
 
-                        <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"/>
+                        <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"></th:block>
 
-                        <th:block th:text="${tagslist.add(entry)}" th:remove="all"/>
+                        <th:block th:text="${tagslist.add(entry)}" th:remove="all"></th:block>
                     </th:block>
                 </th:block>
                 <header>
@@ -38,14 +38,14 @@
                         <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
                     </div>
                 </header>
-                <section class="text" th:if="${#strings.length(p.body) < max_length}" th:utext="${p.body}"/>
-                    <section class="text" th:unless="${#strings.length(p.body) < max_length}" th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"/>
+                <section class="text" th:if="${#strings.length(p.body) < max_length}" th:utext="${p.body}"></section>
+                    <section class="text" th:unless="${#strings.length(p.body) < max_length}" th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"></section>
             </article>
         </section>
     </main>
 
-    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"/>
+    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"></aside>
 
-    <footer th:replace="~{footer.thyme::footer}"/>
+    <footer th:replace="~{footer.thyme::footer}"></footer>
 </body>
 </html>

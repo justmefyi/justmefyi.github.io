@@ -3,7 +3,7 @@
 <body th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')">
     <nav th:id="(${config.site_menu == 'false'} ? '' : 'menu')" th:fragment="menu (cururi)">
         <label for="drop" class="menu_toggle" th:unless="${config.site_menu == 'false'}">Menu</label>
-        <input type="checkbox" id="drop" th:unless="${config.site_menu == 'false'}"/>
+        <input type="checkbox" id="drop" th:unless="${config.site_menu == 'false'}"></input>
         <ul th:class="(${config.site_menu == 'false'} ? '' : 'menu')">
             <li th:with="linkuri=(|${rootpath}index.html|)">
                 <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Home</a>
@@ -12,7 +12,7 @@
             <li th:with="linkuri=(|${rootpath}pages.html|)" th:unless="${config.site_menu_submenu_pages == 'false'}">
                 <label for="drop-pages" th:class="(${#strings.equals(cururi, linkuri)} ? 'menu_toggle current' : 'menu_toggle')" th:unless="${config.site_menu == 'false'}">Pages</label>
                 <a th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')" href="#">Pages</a>
-                <input type="checkbox" id="drop-pages" th:unless="${config.site_menu == 'false'}"/>
+                <input type="checkbox" id="drop-pages" th:unless="${config.site_menu == 'false'}"></input>
                 <ul>
                     <li th:each="i : ${published_pages}"><a th:href="|${rootpath}${i.uri}|" href="#" th:text="${i.title}"></a></li>
                 </ul>
@@ -21,7 +21,7 @@
             <li th:with="linkuri=(|${rootpath}tags.html|)" th:unless="${config.site_menu_submenu_tags == 'false'}">
                 <label for="drop-tags" th:class="(${#strings.equals(cururi, linkuri)} ? 'menu_toggle current' : 'menu_toggle')" th:unless="${config.site_menu == 'false'}">Tags</label>
                 <a th:class="${#strings.equals(cururi, linkuri)} ? 'current' : ''" href="#">Tags</a>
-                <input type="checkbox" id="drop-tags" th:unless="${config.site_menu == 'false'}"/>
+                <input type="checkbox" id="drop-tags" th:unless="${config.site_menu == 'false'}"></input>
                 <ul>
                     <li th:each="i : ${alltags}"><a th:href="|${rootpath}tags/${i}.html|" href="#" th:text="${i}"></a></li>
                 </ul>

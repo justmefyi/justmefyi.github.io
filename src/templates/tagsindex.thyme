@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{htmlhead.thyme::head (title=${content.title})}"/>
+<head th:replace="~{htmlhead.thyme::head (title=${content.title})}"></head>
 <body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}/tags/index.html|)">
-    <header th:replace="~{header.thyme::header (title=null)}"/>
+    <header th:replace="~{header.thyme::header (title=null)}"></header>
 
     <div th:unless="${config.site_menu == 'false'}">
-        <nav th:replace="~{menu.thyme::menu (${current_uri})}"/>
+        <nav th:replace="~{menu.thyme::menu (${current_uri})}"></nav>
     </div>
 
     <main>
@@ -14,13 +14,13 @@
                 <header>
                     <h1>[[${content.title}]]</h1>
                 </header>
-                <section class="text" th:insert="~{tagslist.thyme::tagslist (segment='index', current_uri=${current_uri}, rootpath=${rootpath})}"/>
+                <section class="text" th:insert="~{tagslist.thyme::tagslist (segment='index', current_uri=${current_uri}, rootpath=${rootpath})}"></section>
             </article>
         </section>
     </main>
 
-    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"/>
+    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"></aside>
 
-    <footer th:replace="~{footer.thyme::footer}"/>
+    <footer th:replace="~{footer.thyme::footer}"></footer>
 </body>
 </html>

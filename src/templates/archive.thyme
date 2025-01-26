@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:with="title=('Post Archive')">
-<head th:replace="~{htmlhead.thyme::head (title=${title})}"/>
+<head th:replace="~{htmlhead.thyme::head (title=${title})}"></head>
 <body onload="prettyPrint()" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), current_uri=(|${rootpath}archive.html|)">
-    <header th:replace="~{header.thyme::header (title=null)}"/>
+    <header th:replace="~{header.thyme::header (title=null)}"></header>
 
     <div th:unless="${config.site_menu == 'false'}">
-        <nav th:replace="~{menu.thyme::menu (${current_uri})}"/>
+        <nav th:replace="~{menu.thyme::menu (${current_uri})}"></nav>
     </div>
 
     <main th:with="plist=${#lists.toList({})}">
@@ -23,12 +23,12 @@
                             <!--/* build the list of arrays of tag info */-->
                             <th:block th:if="${p.tags != null}">
                                 <th:block th:each="t: ${#lists.sort(#lists.toList(p.tags))}" th:with="entry=(${ {} })">
-                                    <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
-                                    <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
+                                    <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"></th:block>
+                                    <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"></th:block>
 
-                                    <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"/>
+                                    <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"></th:block>
 
-                                    <th:block th:text="${tagslist.add(entry)}" th:remove="all"/>
+                                    <th:block th:text="${tagslist.add(entry)}" th:remove="all"></th:block>
                                 </th:block>
                             </th:block>
                             <li class="dt"><a th:href="|${rootpath}${p.uri}|" href="#">[[${p.title}]]</a>
@@ -48,8 +48,8 @@
         </section>
     </main>
 
-    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"/>
+    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"></aside>
 
-    <footer th:replace="~{footer.thyme::footer}"/>
+    <footer th:replace="~{footer.thyme::footer}"></footer>
 </body>
 </html>

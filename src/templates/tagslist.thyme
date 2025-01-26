@@ -11,33 +11,33 @@
         <!--/* find all unique tags used in all published_content */-->
         <th:block th:each="p : ${published_content}" th:if="${p != null}">
             <th:block th:each="t : ${p.tags}" th:if="${p.tags !=null && t != null && ! #strings.isEmpty(t)}">
-                <th:block th:text="${published_tags.add(t)}" th:remove="all"/>
+                <th:block th:text="${published_tags.add(t)}" th:remove="all"></th:block>
             </th:block>
         </th:block>
 
         <!--/* for each unique tag, construct display title, uri, and usage count for later display */-->
         <th:block th:each="t : ${#lists.sort(#lists.toList(published_tags))}" th:if="${t != null && ! #strings.isEmpty(t)}" th:with="entry=(${ {} })">
             <!--/* construct the display title */-->
-            <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"/>
-            <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"/>
+            <th:block th:if="${#strings.startsWith(t, '#')}" th:utext="${entry.add(t)}" th:remove="all"></th:block>
+            <th:block th:if="${! #strings.startsWith(t, '#')}" th:text="${entry.add('#' + t)}" th:remove="all"></th:block>
 
             <!--/* construct the uri with an escaped tag name */-->
-            <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"/>
+            <th:block th:text="${entry.add('tags/' + #uris.escapePathSegment(t) + '.html')}" th:remove="all"></th:block>
 
             <!--/* count uses (hits) of current tag for all published_content */-->
             <th:block th:with="hits=(${ {} })">
                 <th:block th:each="p,i : ${published_content}" th:if="${p != null}">
-                    <th:block th:if="${p.tags != null && #lists.contains(#lists.toList(p.tags), t)}" th:text="${hits.add(p)}" th:remove="all"/>
+                    <th:block th:if="${p.tags != null && #lists.contains(#lists.toList(p.tags), t)}" th:text="${hits.add(p)}" th:remove="all"></th:block>
                 </th:block>
-                <th:block th:text="${entry.add(hits != null ? #lists.size(hits) : 0)}" th:remove="all"/>
+                <th:block th:text="${entry.add(hits != null ? #lists.size(hits) : 0)}" th:remove="all"></th:block>
             </th:block>
 
-            <th:block th:text="${tagslist.add(entry)}" th:remove="all"/>
+            <th:block th:text="${tagslist.add(entry)}" th:remove="all"></th:block>
         </th:block>
 
         <!--/* sidebar display block */-->
         <th:block th:if="${#strings.equals(segment, 'sidebar')}">
-            <summary><h1>Tags <span class="smalltext" th:text="|( ${#sets.size(tagslist)} )|"/></h1></summary>
+            <summary><h1>Tags <span class="smalltext" th:text="|( ${#sets.size(tagslist)} )|"></span></h1></summary>
             <ul>
                 <li th:each="p : ${tagslist}" th:if="${p != null && ! #strings.isEmpty(p[0]) && ! #strings.isEmpty(p[1]) && ! #strings.isEmpty(p[2])}"><a class="smalltext" th:href="|${rootpath}${p[1]}|" href="#">[[${p[0]}]] ([[${p[2]}]])</a></li>
             </ul>
