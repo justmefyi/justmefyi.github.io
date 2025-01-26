@@ -1,7 +1,7 @@
 title=The TRUE American Dream
 date=2014-09-02
 type=post
-tags=america,freedom,history
+tags=2014,america,freedom,history
 status=published
 ~~~~~~
 I started reading a (much longer than I really wanted to read) diatribe on "the American Dream" tonight and quickly stopped, because it was apparent from the author's tone that this was yet another person getting it wrong.  It's so simple, I'm amazed people have trouble figuring it out.  The American Dream is _not_ about becoming rich, successful, powerful, famous, etc., etc.

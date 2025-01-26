@@ -2,7 +2,7 @@ title=The Letter
 date=2014-08-30
 type=page
 cat=prose
-tags=prose,arthritis,fiction,loss,love,paper,short story
+tags=2014,prose,arthritis,fiction,loss,love,paper,short story
 status=published
 ~~~~~~
 The pain was so great when he sat down to write the most important letter of his life that just picking up the pen nearly caused him to faint.  The pain shot through his body like lightning through the night sky, yet he forced himself to bear it.  "Just a letter at a time," he muttered to himself as the tip of the pen met the paper for the very first time.

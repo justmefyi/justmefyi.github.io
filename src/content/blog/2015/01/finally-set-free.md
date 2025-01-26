@@ -1,7 +1,7 @@
 title=Finally set free
 date=2015-01-17
 type=post
-tags=freedom,love,recovery,relationships
+tags=2015,freedom,love,recovery,relationships
 status=published
 ~~~~~~
 A few years ago I thought I had found true

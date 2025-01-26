@@ -2,7 +2,7 @@ title=The Old Lady in Glasses
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,limerick
+tags=1993,highschool,poetry,limerick
 status=published
 ~~~~~~
 There was an old lady in glasses

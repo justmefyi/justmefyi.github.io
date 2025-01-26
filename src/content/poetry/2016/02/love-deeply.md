@@ -2,7 +2,7 @@ title=Love Deeply
 date=2016-02-14
 type=page
 cat=poetry
-tags=poetry,hope,hurt,love,pain,relationships
+tags=2016,poetry,hope,hurt,love,pain,relationships
 status=published
 ~~~~~~
 I have loved deeper than I ever thought possible.

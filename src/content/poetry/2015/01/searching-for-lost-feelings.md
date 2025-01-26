@@ -2,7 +2,7 @@ title=Searching for lost feelings
 date=2015-01-17
 type=page
 cat=poetry
-tags=hope,loss,love,pain,relationships,poetry
+tags=2015,hope,loss,love,pain,relationships,poetry
 status=published
 ~~~~~~
 I've tried to find that feeling again

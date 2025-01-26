@@ -2,7 +2,7 @@ title=Discovery Channel's "Plane Crash"
 date=2012-10-08
 type=page
 cat=reviews
-tags=airplanes,discovery,documentaries,flying,life,recommended,safety,television,travel,tv
+tags=2012,airplanes,discovery,documentaries,flying,life,recommended,safety,television,travel,tv
 status=published
 ~~~~~~
 If you fly, you should really watch (it's on the Science Channel right now) Discovery's Curiosity: Plane Crash.

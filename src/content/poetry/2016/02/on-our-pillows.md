@@ -2,7 +2,7 @@ title=On Our Pillows
 date=2016-02-27
 type=page
 cat=poetry
-tags=poetry,healing,loss,pain
+tags=2016,poetry,healing,loss,pain
 status=published
 ~~~~~~
 The tears we shed

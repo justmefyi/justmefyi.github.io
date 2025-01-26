@@ -2,7 +2,7 @@ title=Teachers
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,teachers
+tags=1993,highschool,poetry,teachers
 status=published
 ~~~~~~
 Teachers

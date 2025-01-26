@@ -2,7 +2,7 @@ title=Rhodia Webnotebook: First Impressions
 date=2013-02-17
 type=page
 cat=reviews
-tags=paper,purchases,writing,reviews
+tags=2013,paper,purchases,writing,reviews
 status=published
 ~~~~~~
 The look/styling of the cover, elastic strap, pages (rounded corners), and spacing of the dots (I got the "Dot Grid" version [from here](http://www.jetpens.com/Rhodia-Webnotebook-Pocket-Elastic-Closure-Black-Cover-5.5-X-8.25-96-Sheets-5-mm-Dot-Grid-Bundle-of-2/pd/8113)) all are great, as I expected. The "yellowness" of the pages was more pronounced than expected, perhaps this was from comparing side-by-side with my previous Clairefontaine "Basic" notebook that had the pure white (vs. "ivory") paper, but maybe not.

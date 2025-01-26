@@ -2,7 +2,7 @@ title=What I Know Now
 date=2017-02-01
 type=page
 cat=poetry
-tags=poetry,advice,hope,life,musings
+tags=2017,poetry,advice,hope,life,musings
 status=published
 ~~~~~~
 One day,

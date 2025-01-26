@@ -2,7 +2,7 @@ title=Falling in love is great...
 date=2008-08-11
 type=page
 cat=poetry
-tags=poetry,love
+tags=2008,poetry,love
 status=published
 ~~~~~~
 Falling in love is great...

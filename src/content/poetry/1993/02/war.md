@@ -2,7 +2,7 @@ title=War
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,war,peace
+tags=1993,highschool,poetry,war,peace
 status=published
 ~~~~~~
 War, why do we fight?

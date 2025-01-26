@@ -1,7 +1,7 @@
 title=Moving on after loss
 date=2012-08-17
 type=post
-tags=growth,life,loss,wounds
+tags=2012,growth,life,loss,wounds
 status=published
 ~~~~~~
 Moving on with your life after loss is a very difficult task. I'm no expert at it, but I do know this: IT TAKES TIME!

@@ -2,7 +2,7 @@ title=I Have Only One Heart
 date=2017-05-29 15:48
 type=page
 cat=poetry
-tags=love,hurt,pain,survival
+tags=2017,love,hurt,pain,survival
 status=published
 ~~~~~~
 I have only one heart

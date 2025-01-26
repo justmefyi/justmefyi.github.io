@@ -2,7 +2,7 @@ title=Starting to Start Over
 date=2012-02-12
 type=page
 cat=poetry
-tags=love,poetry
+tags=2012,love,poetry
 status=published
 ~~~~~~
 Somewhere,

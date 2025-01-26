@@ -2,7 +2,7 @@ title=Time #2
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,time
+tags=1993,highschool,poetry,time
 status=published
 ~~~~~~
 Ticking,

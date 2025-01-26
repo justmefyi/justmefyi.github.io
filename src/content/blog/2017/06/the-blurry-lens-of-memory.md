@@ -1,7 +1,7 @@
 title=The Blurry Lens of Memory
 date=2017-06-20 20:51
 type=post
-tags=personal,lessons,life,healing
+tags=2017,personal,lessons,life,healing
 status=published
 ~~~~~~
 Looking back, through the blurry lens of memory, at all the people whose time in your life was far too short can bring both joyful memories and empty sadness as you realize that you will never see them again.

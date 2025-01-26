@@ -2,7 +2,7 @@ title=You Were More
 date=2016-02-18
 type=page
 cat=poetry
-tags=poetry,friendships,loss,love,regret,relationships
+tags=2016,poetry,friendships,loss,love,regret,relationships
 status=published
 ~~~~~~
 You were more

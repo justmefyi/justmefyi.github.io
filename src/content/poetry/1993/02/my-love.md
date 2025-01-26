@@ -2,7 +2,7 @@ title=My Love
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,sonnet,love
+tags=1993,highschool,poetry,sonnet,love
 status=published
 ~~~~~~
 My entire heart goes out to you my love

@@ -2,7 +2,7 @@ title=I Believe That...
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,beliefs,peace,God
+tags=1993,highschool,poetry,beliefs,peace,God
 status=published
 ~~~~~~
 I believe that peace will come.

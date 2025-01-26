@@ -2,7 +2,7 @@ title=The Girl Named Flo
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,limerick
+tags=1993,highschool,poetry,limerick
 status=published
 ~~~~~~
 There once was a girl named Flo,

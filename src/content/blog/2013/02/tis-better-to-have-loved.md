@@ -1,7 +1,7 @@
 title='Tis better to have loved...
 date=2013-02-13
 type=post
-tags=life,loss,love,relationships,wounds
+tags=2013,life,loss,love,relationships,wounds
 status=published
 ~~~~~~
 "'Tis better to have loved and lost" is what they say. But I doubt the originator of that saying actually had the type of love that is only possible through a lengthy distance relationship that comes about through lengthy frequent conversations.

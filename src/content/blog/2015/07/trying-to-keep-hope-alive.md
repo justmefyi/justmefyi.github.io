@@ -1,7 +1,7 @@
 title=Trying to keep hope alive
 date=2015-07-12
 type=post
-tags=hope,movies,polls,quotes
+tags=2015,hope,movies,polls,quotes
 status=published
 ~~~~~~
 One of my all-time favorite movies, The Shawshank Redemption, is permeated by a theme of wrestling with hope for a better future when everything around you is telling you to give up on that hope.

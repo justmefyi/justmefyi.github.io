@@ -1,7 +1,7 @@
 title=What Pet Choice reveals about the owner
 date=2013-02-17
 type=post
-tags=humor,pets,cats
+tags=2013,humor,pets,cats
 status=published
 ~~~~~~
 Dog -- Needs to be constantly smothered in affection.

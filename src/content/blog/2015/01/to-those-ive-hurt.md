@@ -1,7 +1,7 @@
 title=To those I've hurt...
 date=2015-01-08
 type=post
-tags=apologies,life,wounds
+tags=2015,apologies,life,wounds
 status=published
 ~~~~~~
 I might be wrong about a lot of things -- especially those said in the heat of the moment -- for that, I'm truly sorry.

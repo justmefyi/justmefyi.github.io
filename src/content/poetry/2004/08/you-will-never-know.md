@@ -2,7 +2,7 @@ title=You Will Never Know
 date=2004-08-11
 type=page
 cat=poetry
-tags=love,poetry
+tags=2004,love,poetry
 status=published
 ~~~~~~
 Being without you

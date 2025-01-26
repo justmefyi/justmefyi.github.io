@@ -2,7 +2,7 @@ title=Taking a Step Back
 date=2014-12-17
 type=page
 cat=poetry
-tags=poetry,life,rebirth,rediscovery
+tags=2014,poetry,life,rebirth,rediscovery
 status=published
 ~~~~~~
 Taking a step back

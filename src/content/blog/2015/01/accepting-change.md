@@ -1,7 +1,7 @@
 title=Accepting change
 date=2015-01-08
 type=post
-tags=change,life
+tags=2015,change,life
 status=published
 ~~~~~~
 Somewhere, years ago, I changed.

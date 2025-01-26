@@ -2,7 +2,7 @@ title=We Must Live...
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,life,peace,advice
+tags=1993,highschool,poetry,life,peace,advice
 status=published
 ~~~~~~
 We must live for today.

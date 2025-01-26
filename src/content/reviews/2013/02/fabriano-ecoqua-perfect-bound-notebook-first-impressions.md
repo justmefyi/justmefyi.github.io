@@ -2,7 +2,7 @@ title=Fabriano EcoQua Perfect Bound Notebook: First Impressions
 date=2013-02-17
 type=page
 cat=reviews
-tags=reviews,paper,purchases,writing
+tags=2013,reviews,paper,purchases,writing
 status=published
 ~~~~~~
 "Perfect" is not so perfect.  I bought a 2-pack of these ([from here](http://www.europeanpaper.com/product/fabriano-ecoqua-perfect-bound-dot-notebook-pfa1856/)) and one arrived with the whole pad, save a single page, unglued from the cover, which told me that the glue on the margin failed.  Comparing with the intact pad, I could see that there really is only a small strip of glue along one corner of the paper pad that holds it into the cover.

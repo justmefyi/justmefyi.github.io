@@ -2,7 +2,7 @@ title=Movie "The Bridge"
 date=2008-06-01
 type=page
 cat=reviews
-tags=reviews,documentaries,life,movies,suicide
+tags=2008,reviews,documentaries,life,movies,suicide
 status=published
 ~~~~~~
 It's been a couple weeks since I caught the last half of the film "The Bridge" on IFC, but it's haunting and disturbing images mixed with the extreme beauty of the San Francisco bay area and (the title's source) the Golden Gate Bridge along with the knowledge that this was a documentary -- and nothing was fake, it was all real -- made this film an extremely surreal experience that I've not been able to get out of my head.

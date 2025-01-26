@@ -1,7 +1,7 @@
 title=Soothing the traumatized new pet
 date=2012-10-08
 type=post
-tags=life,pets
+tags=2012,life,pets
 status=published
 ~~~~~~
 Slowly I'm getting my new cat, Vladimir, back to where he trusts humans -- or, me at least. I got him back in the Spring, about 6 months ago, and he's _finally_ where he'll occasionally actually come to me, albeit in an excruciatingly cautious manner that even a minor cough will spook him.

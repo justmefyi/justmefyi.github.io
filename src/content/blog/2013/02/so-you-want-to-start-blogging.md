@@ -1,7 +1,7 @@
 title=So you want to start blogging...
 date=2013-02-23
 type=post
-tags=advice,blogging,writing
+tags=2013,advice,blogging,writing
 status=published
 ~~~~~~
 Recently a photographer friend of mine, who's wanting to create a blog, asked on his Facebook page "How the $&amp;#$*! do I get started?"  Below is my advice to him, but this advice pretty well suits any business area, not just photography.  I've altered the below to be more generalized.

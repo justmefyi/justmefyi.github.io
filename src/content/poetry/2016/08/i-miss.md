@@ -2,7 +2,7 @@ title=I Miss
 date=2016-08-14
 type=page
 cat=poetry
-tags=poetry,friendships,loss,love,relationships
+tags=2016,poetry,friendships,loss,love,relationships
 status=published
 ~~~~~~
 I miss

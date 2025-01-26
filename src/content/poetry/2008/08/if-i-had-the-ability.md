@@ -2,7 +2,7 @@ title=If I Had The Ability
 date=2008-08-11
 type=page
 cat=poetry
-tags=poetry,love
+tags=2008,poetry,love
 status=published
 ~~~~~~
 If I had the ability...

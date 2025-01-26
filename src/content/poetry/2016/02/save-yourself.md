@@ -2,7 +2,7 @@ title=Save Yourself
 date=2016-02-17
 type=page
 cat=poetry
-tags=poetry,hope,inspiration,loss,musings
+tags=2016,poetry,hope,inspiration,loss,musings
 status=published
 ~~~~~~
 Loosing everything,

@@ -2,7 +2,7 @@ title=Tears
 date=2016-02-19
 type=page
 cat=poetry
-tags=poetry,loss,musings,tears
+tags=2016,poetry,loss,musings,tears
 status=published
 ~~~~~~
 The tears

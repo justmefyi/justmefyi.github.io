@@ -2,7 +2,7 @@ title=Mom
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,parents
+tags=1993,highschool,poetry,parents
 status=published
 ~~~~~~
 Mother's love

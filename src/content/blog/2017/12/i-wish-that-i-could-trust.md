@@ -1,7 +1,7 @@
 title=I Wish That I Could Trust
 date=2017-12-21 16:07
 type=post
-tags=life,pain,ptsd,healing
+tags=2017,life,pain,ptsd,healing
 status=published
 ~~~~~~
 I really wish that I could trust enough to let downn my guard enough to allow myself the luxury of actually being happy -- but I can't.  I've just had too many bad things come along and rip the happiness from me.

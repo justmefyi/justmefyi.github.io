@@ -2,7 +2,7 @@ title=Snow
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry
+tags=1993,highschool,poetry
 status=published
 ~~~~~~
 Snow

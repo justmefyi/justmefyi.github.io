@@ -1,7 +1,7 @@
 title=When our Prayers are Answered
 date=2017-06-20 21:31
 type=post
-tags=religion,life
+tags=2017,religion,life
 status=published
 ~~~~~~
 "Where do we go when our prayers are answered and the answer is 'no'?", is what a song asks.  This is a situation that I've found myself in a few times over the last few years.

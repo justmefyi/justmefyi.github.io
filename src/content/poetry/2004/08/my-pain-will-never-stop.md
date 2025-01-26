@@ -2,7 +2,7 @@ title=My Pain Will Never Stop
 date=2004-08-11
 type=page
 cat=poetry
-tags=loss,love,poetry
+tags=2004,loss,love,poetry
 status=published
 ~~~~~~
 My friend,

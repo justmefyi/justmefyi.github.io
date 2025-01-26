@@ -2,7 +2,7 @@ title=I'm Done
 date=2015-07-19
 type=page
 cat=poetry
-tags=poetry,love
+tags=2015,poetry,love
 status=published
 ~~~~~~
 I'm done.

@@ -1,7 +1,7 @@
 title=Memorial Day
 date=2017-05-29 21:04
 type=post
-tags=personal,family,memories
+tags=2017,personal,family,memories
 status=published
 ~~~~~~
 Memorial Day weekend means different things to each of us.  For me, the memories associated with it are of our family taking Grandma around to the cemeteries down in Adrian and Hillsdale (and surrounding communities).  We would, normally, do that trip on Saturday.

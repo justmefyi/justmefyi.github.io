@@ -1,7 +1,7 @@
 title=A good metaphor for life...
 date=2008-06-30
 type=post
-tags=life,tv,travel
+tags=2008,life,tv,travel
 status=published
 ~~~~~~
 I was sitting half-watching Anthony Bourdain's "No Reservations" show on the Travel Channel tonight where he was roaming around Shanghai, China and Tibet when something that he said towards the very end of the show got caught by my subconscious.  I don't feel like staying up until 2am to double check the accuracy of what I heard, so this is not an exact version, but close enough to get the point across.

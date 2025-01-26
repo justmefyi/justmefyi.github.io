@@ -1,7 +1,7 @@
 title=Upcoming changes
 date=2012-09-08
 type=post
-tags=change,chicago,growth,life,nashville
+tags=2012,change,chicago,growth,life,nashville
 status=published
 ~~~~~~
 Change is a good thing, right? I mean, without change we'd become complacent, loose our spark, and basically loose the will to go on. Major change, however, takes that to a whole new level.

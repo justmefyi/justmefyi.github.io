@@ -2,7 +2,7 @@ title=Winter
 date=1993-02-04
 type=page
 cat=poetry
-tags=highschool,poetry,haiku,seasons
+tags=1993,highschool,poetry,haiku,seasons
 status=published
 ~~~~~~
 The snowflakes falling

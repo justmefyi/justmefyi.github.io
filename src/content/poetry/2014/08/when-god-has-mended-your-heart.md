@@ -2,7 +2,7 @@ title=When God Has Mended Your Heart
 date=2014-08-07
 type=page
 cat=poetry
-tags=poetry,growth,life,loss,love
+tags=2014,poetry,growth,life,loss,love
 status=published
 ~~~~~~
 When your emotions are torn

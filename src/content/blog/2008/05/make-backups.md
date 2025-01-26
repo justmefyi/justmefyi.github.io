@@ -1,7 +1,7 @@
 title=Make Backups
 date=2008-05-12
 type=post
-tags=computers,hardware,advice
+tags=2008,computers,hardware,advice
 status=published
 ~~~~~~
 Ladies and gentlemen of the class of whatever.
