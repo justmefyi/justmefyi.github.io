@@ -34,6 +34,12 @@
                 </ul>
             </li>
 
+            <li th:with="linkuri=(|${rootpath}blog/|)"
+                        th:unless="${config.site_menu_page_blog == 'false'}">
+                <a th:href="${linkuri}"
+                            th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Blog</a>
+            </li>
+
             <li th:with="linkuri=(|${rootpath}travel/|)"
                         th:unless="${config.site_menu_page_travel == 'false'}">
                 <a th:href="${linkuri}"
