@@ -9,7 +9,8 @@
     <th:block th:if="${c != null
                      && #strings.equals(c.status, 'published')
                      && #strings.equals(c.type, 'post')}"
-                th:utext="${pubContent.add(c)}"></th:block>
+                th:utext="${pubContent.add(c)}"
+                th:remove="all"></th:block>
     </th:block>
 </th:block>
 <body onload="prettyPrint()"
