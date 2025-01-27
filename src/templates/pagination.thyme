@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-    <nav th:fragment="pagination"
-                th:with="basePath=(${content.rootpath != null} ? ${content.rootpath} : '')">
+    <nav th:fragment="pagination (numPages)"
+                th:with="basePath=(${content.rootpath != null} ? ${content.rootpath} : ''),
+                         curPageNum=(${currentPageNumber == null} ? 1 : ${currentPageNumber})">
         <span th:unless="${config.site_pagination_numeric}">
-            <a th:href="${basePath + nextFileName}"
-                        th:if="${nextFileName}">&larr;Older</a>
+            <a th:href="${basePath + nextFileName}" th:if="${nextFileName}">&larr;Older</a>
             <span th:if="${nextFileName != null || previousFileName != null}">&hellip;</span>
-            <a th:href="${basePath + previousFileName}"
-                        th:if="${previousFileName}">Newer&rarr;</a>
+            <a th:href="${basePath + previousFileName}" th:if="${previousFileName}">Newer&rarr;</a>
         </span>
         <span th:if="${config.site_pagination_numeric
-                            && config.index_file != null
-                            && config.output_extension != null
-                            && numberOfPages != null
-                            && numberOfPages > 0}"
-                    th:with="fileCurPgNum=(${currentPageNumber > 1}
-                                    ? ${currentPageNumber}
-                                    : ''),
-                            prevPgNum=(${currentPageNumber > 1}
-                                    ? ${currentPageNumber - 1}
-                                    : 1),
-                            nextPgNum=(${currentPageNumber < numberOfPages}
-                                    ? ${currentPageNumber + 1}
-                                    : ${numberOfPages})">
-            <span th:if="${currentPageNumber > 1}">
+                    && config.output_extension != null
+                    && numPages != null
+                    && numPages > 0}"
+              th:with="fileCurPgNum=(${curPageNum > 1} ? ${curPageNum} : ''),
+                       prevPgNum=(${curPageNum > 1} ? ${curPageNum - 1} : 1),
+                       nextPgNum=(${curPageNum < numPages} ? ${curPageNum + 1} : ${numPages})">
+
+            <span th:if="${curPageNum > 1}">
                 <a th:href="${basePath + ((prevPgNum > 1) ? prevPgNum : '')}"
-                            th:text="'&larr;Prev'"></a>
+                        th:text="'&larr;Prev'"></a>
             </span>
 
-            <span th:each="i : ${#numbers.sequence(1, numberOfPages)}"
-                        th:with="fileCurPgNum=(${currentPageNumber > 1}
-                                        ? ${currentPageNumber}
-                                        : ''),
+            <span th:each="i : ${#numbers.sequence(1, numPages)}"
+                        th:with="fileCurPgNum=(${curPageNum > 1} ? ${curPageNum} : ''),
                                 filePgNum=(${i > 1} ? ${i} : '')">
                 <a th:href="${basePath + filePgNum}"
                             th:text="${i}"
-                            th:class="(${currentPageNumber == i} ? 'current' : '')"></a>
+                            th:class="(${curPageNum == i} ? 'current' : '')"></a>
             </span>
 
-            <span th:if="${currentPageNumber < numberOfPages}">
-                <a th:href="${basePath + ((nextPgNum > 1) ? nextPgNum : '')}"
-                            th:text="'Next&rarr;'"></a>
+            <span th:if="${curPageNum < numPages}">
+                <a th:href="${basePath + ((nextPgNum > 1) ? nextPgNum : '')}" th:text="'Next&rarr;'"></a>
             </span>
         </span>
     </nav>

@@ -8,8 +8,9 @@
 <th:block th:each="c : ${all_content}" >
     <th:block th:if="${c != null
                      && #strings.equals(c.status, 'published')
-                     && #strings.equals(c.type, 'post')}"
-                th:utext="${pubContent.add(c)}"></th:block>
+                     && (#strings.equals(c.type, 'post') || #strings.equals(c.type, 'page'))}"
+                th:utext="${pubContent.add(c)}"
+                th:remove="all"></th:block>
     </th:block>
 </th:block>
 <body onload="prettyPrint()"
@@ -23,8 +24,7 @@
                                     : ${#numbers.formatDecimal(rawNumPages + 1, 0, 0)}),
                             high=(${#numbers.formatInteger(currentPageNumber * numPerPage, 0)}),
                             low=(${#numbers.formatInteger(high - numPerPage + 1, 0)})">
-    <header th:replace="~{header.thyme::header (title=${title})}"
-            th:with=""></header>
+    <header th:replace="~{header.thyme::header (title=${title})}"></header>
 
     <div th:unless="${config.site_menu == 'false'}">
         <nav th:replace="~{menu.thyme::menu (${current_uri})}"></nav>
@@ -37,24 +37,6 @@
                     th:with="max_length=(${config.index_snippet_length != null}
                                     ? ${config.index_snippet_length}
                                     : 256)">
-
-            <!--/*
-            <article>
-                <p>
-                    max_length: '[[${max_length}]]'<br/>
-                    numPerPage: '[[${numPerPage}]]'<br/>
-                    numItems: '[[${numItems}]]'<br/>
-                    numPages: '[[${numPages}]]'<br/>
-                    high: '[[${high}]]'<br/>
-                    low: '[[${low}]]'<br/>
-                </p>
-            </article>
-            <article><header><h1>pubContent</h1></header>
-                <section class="text"><ol><li th:each="p : ${pubContent}"
-                         th:if="${p != null && p.type != null}">
-                     [[${p.title}]] ([[${#dates.format(p.date, 'yyyy-MM-dd')}]])</li></ol></section></article>
-            */-->
-
             <article th:each="p : ${pubContent}"
                 th:with="tagslist=(${#sets.toSet({})})"
                 th:if="${p != null
