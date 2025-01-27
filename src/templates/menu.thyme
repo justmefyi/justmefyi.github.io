@@ -5,7 +5,7 @@
         <label for="drop" class="menu_toggle" th:unless="${config.site_menu == 'false'}">Menu</label>
         <input type="checkbox" id="drop" th:unless="${config.site_menu == 'false'}"></input>
         <ul th:class="(${config.site_menu == 'false'} ? '' : 'menu')">
-            <li th:with="linkuri=(|${rootpath}index.html|)">
+            <li th:with="linkuri=(${rootpath})">
                 <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Home</a>
             </li>
 

@@ -6,7 +6,7 @@
                 th:with="page_title=(${title != null} ? '|: ${title}|' : ''),
                         site_title=(${config.site_title != null}
                                 ? ${#strings.arrayJoin(config.site_title, ', ')}
-                                : '')"><a th:href="|${rootpath}index.html|"
+                                : '')"><a th:href="${rootpath}"
                                             th:text="|${site_title}${page_title}|"></a></div>
         <div class="right"
                 th:with="tagline=(${config.site_tagline != null} ? ${config.site_tagline} : '')"
