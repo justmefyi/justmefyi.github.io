@@ -9,6 +9,10 @@
                 <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Home</a>
             </li>
 
+            <li th:with="linkuri=(|${rootpath}about.html|)" th:unless="${config.site_menu_page_about == 'false'}">
+                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">About</a>
+            </li>
+
             <li th:with="linkuri=(|${rootpath}pages.html|)" th:unless="${config.site_menu_submenu_pages == 'false'}">
                 <label for="drop-pages" th:class="(${#strings.equals(cururi, linkuri)} ? 'menu_toggle current' : 'menu_toggle')" th:unless="${config.site_menu == 'false'}">Pages</label>
                 <a th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')" href="#">Pages</a>
@@ -53,10 +57,6 @@
 
             <li th:with="linkuri=(|${rootpath}tags/|)" th:unless="${config.site_menu_page_tags == 'false'}">
                 <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">Tags</a>
-            </li>
-
-            <li th:with="linkuri=(|${rootpath}about.html|)" th:unless="${config.site_menu_page_about == 'false'}">
-                <a th:href="${linkuri}" th:class="(${#strings.equals(cururi, linkuri)} ? 'current' : '')">About</a>
             </li>
 
             <li th:with="linkuri=(|${rootpath}disclaimer.html|)" th:unless="${config.site_menu_page_disclaimer == 'false'}">
