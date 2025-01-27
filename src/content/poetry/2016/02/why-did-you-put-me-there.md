@@ -2,7 +2,7 @@ title=Why Did You Put Me There
 date=2016-02-22
 type=page
 cat=poetry
-tags=2016,poetry,friendshipsloss,regret,relationships
+tags=2016,poetry,friendships,loss,regret,relationships
 status=published
 ~~~~~~
 My old friend, why do you hate me so?

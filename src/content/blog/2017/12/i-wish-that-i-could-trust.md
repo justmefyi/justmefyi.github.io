@@ -4,7 +4,7 @@ type=post
 tags=2017,life,pain,ptsd,healing
 status=published
 ~~~~~~
-I really wish that I could trust enough to let downn my guard enough to allow myself the luxury of actually being happy -- but I can't.  I've just had too many bad things come along and rip the happiness from me.
+I really wish that I could trust enough to let down my guard enough to allow myself the luxury of actually being happy -- but I can't.  I've just had too many bad things come along and rip the happiness from me.
 
 It seems as if, every single time I get to where it seems as if I can relax and "know" that the worst is behind me, another round of bad situations start up.
 

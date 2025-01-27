@@ -2,7 +2,7 @@ title=Touring Russia
 date=1994-02-04
 type=page
 cat=travel
-tags=1994,travel,ussr,moscow,smolensk,leningrad,st. petersburg,russia,minsk,belarus,kiev,kyiv,odessa,ukraine,europe
+tags=1994,travel,USSR,Moscow,Smolensk,Leningrad,St. Petersburg,Russia,Minsk,Belarus,Kiev,Kyiv,Odessa,Ukraine,Europe
 status=published
 ~~~~~~
 On July 6, 1991, a group of teenage high school students, including myself, boarded a plane departing for a three week journey together. We were bound to a country that, until very recently, had been shrouded in mystery and secrecy. This country was, during my visit, known as the Union of Soviet Socialist Republics. This tour would take us through six of the former Soviet Union's most important cities; Moscow, Smolensk, Minsk, Odessa, Kiev, and Leningrad (now St. Petersburg).  These cities are now located in three countries; Russia, Byelorus, and Ukraine.

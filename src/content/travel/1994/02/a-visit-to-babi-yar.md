@@ -2,7 +2,7 @@ title=A Visit To Babi Yar
 date=1994-02-04
 type=page
 cat=travel
-tags=1994,history,holocaust,kiev,kyiv,life,travel,ukraine,ussr,wwii,change
+tags=1994,history,holocaust,Kiev,Kyiv,life,travel,Ukraine,USSR,WWII,change
 status=published
 ~~~~~~
 [monument]: /img/travel/1994/02/babi_yar_monument.jpg "Babi Yar Monument"
