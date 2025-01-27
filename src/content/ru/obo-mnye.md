@@ -1,6 +1,6 @@
 title=Обо мне
 date=2017-12-07
-type=sitepage
+type=page
 tags=
 status=draft
 ~~~~~~

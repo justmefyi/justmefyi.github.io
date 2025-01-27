@@ -1,6 +1,6 @@
 title=About
 date=2017-12-08
-type=sitepage
+type=page
 status=draft
 ~~~~~~
 I'm a poet, and I know it... har har.  Seriously, though, I do write the occasional poem -- and that's most of what's on this site at the moment.

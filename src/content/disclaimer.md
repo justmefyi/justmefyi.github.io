@@ -1,5 +1,5 @@
 title=Disclaimer
-type=sitepage
+type=page
 status=published
 excluded=true
 ~~~~~~
