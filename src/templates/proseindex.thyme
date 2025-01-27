@@ -31,12 +31,12 @@
                 </th:block>
                 <header>
                     <h1><a th:href="|${rootpath}${p.uri}|" href="href">[[${p.title}]]</a></h1>
-                    <div class="timestamp"><time th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date, 'dd MMMM yyyy')}]]</time></div>
-                    <div class="author" th:if="${config.site_author_index_shown}" th:with="p_author=(${p.author != null} ? ${p.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${p_author}]]</div>
                     <div class="category" th:if="${p.cat != null && ! #strings.isEmpty(p.cat)}">Category: [[${#strings.capitalizeWords(p.cat)}]]</div>
                     <div class="tags" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
                         <th:block th:each="t,i : ${tagslist}"><a th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block th:unless="${i.last}">, </th:block></th:block>
                     </div>
+                    <div class="author" th:if="${config.site_author_index_shown}" th:with="p_author=(${p.author != null} ? ${p.author} : (${config.site_owner_shown && config.site_owner != null} ? ${config.site_owner} : ''))">[[${p_author}]]</div>
+                    <div class="timestamp"><time th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date, 'dd MMMM yyyy')}]]</time></div>
                 </header>
                 <section class="text" th:if="${#strings.length(p.body) < max_length}" th:utext="${p.body}"></section>
                     <section class="text" th:unless="${#strings.length(p.body) < max_length}" th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"></section>

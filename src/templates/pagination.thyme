@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-    <nav th:fragment="pagination (numPages)"
-                th:with="basePath=(${content.rootpath != null} ? ${content.rootpath} : ''),
-                         curPageNum=(${currentPageNumber == null} ? 1 : ${currentPageNumber})">
+    <nav th:fragment="pagination (numPages, curPageNum)"
+                th:with="basePath=(${content.rootpath != null} ? ${content.rootpath} : '')">
         <span th:unless="${config.site_pagination_numeric}">
             <a th:href="${basePath + nextFileName}" th:if="${nextFileName}">&larr;Older</a>
             <span th:if="${nextFileName != null || previousFileName != null}">&hellip;</span>

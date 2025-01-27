@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-    <aside th:fragment="sidebar" th:unless="${config.site_sidebar == 'false'}" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), cururi=(${current_uri} != null ? ${current_uri} : ''), tags_shown=(${tags_shown != null} ? ${tags_shown} : (${config.site_sidebar_tags != null} ? ${config.site_sidebar_tags} : false))">
+    <aside th:fragment="sidebar (current_uri)" th:unless="${config.site_sidebar == 'false'}" th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''), cururi=(${current_uri} != null ? ${current_uri} : ''), tags_shown=(${tags_shown != null} ? ${tags_shown} : (${config.site_sidebar_tags != null} ? ${config.site_sidebar_tags} : false))">
         <details open th:if="${config.site_sidebar_menu}">
             <summary><h1>Menu</h1></summary>
             <div th:include="~{menu.thyme::menu (${cururi})}"></div>

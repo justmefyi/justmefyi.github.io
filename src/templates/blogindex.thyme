@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-            th:with="page_num=(${currentPageNumber != null} ? ${currentPageNumber} : ''),
+            th:with="curPageNum=(${currentPageNumber != null} ? ${currentPageNumber} : 1),
                     title=null,
                     pubContent=(${#lists.toList({})})">
 <head th:replace="~{htmlhead.thyme::head (title=${title})}"></head>
@@ -21,7 +21,7 @@
                             numPages=(${numItems % numPerPage} == 0
                                     ? ${#numbers.formatDecimal(rawNumPages, 0, 0)}
                                     : ${#numbers.formatDecimal(rawNumPages + 1, 0, 0)}),
-                            high=(${#numbers.formatInteger(currentPageNumber * numPerPage, 0)}),
+                            high=(${#numbers.formatInteger(curPageNum * numPerPage, 0)}),
                             low=(${#numbers.formatInteger(high - numPerPage + 1, 0)})">
     <header th:replace="~{header.thyme::header (title=${title})}"
             th:with=""></header>
@@ -81,15 +81,6 @@
                 </th:block>
                 <header>
                     <h1><a th:href="|${rootpath}${p.uri}|" href="href">[[${p.title}]]</a></h1>
-                    <div class="timestamp"><time
-                                th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date,
-                                        'dd MMMM yyyy')}]]</time></div>
-                    <div class="author" th:if="${config.site_author_index_shown}"
-                                th:with="p_author=(${p.author != null}
-                                        ? ${p.author}
-                                        : (${config.site_owner_shown && config.site_owner != null}
-                                                ? ${config.site_owner}
-                                                : ''))">[[${p_author}]]</div>
                     <div class="category" th:if="${p.cat != null
                                 && ! #strings.isEmpty(p.cat)}">Category: [[${#strings.capitalizeWords(p.cat)}]]</div>
                     <div class="tags" th:unless="${tagslist == null || #sets.isEmpty(tagslist)}">Tags:
@@ -97,6 +88,15 @@
                                     th:href="|${rootpath}${t[1]}|" href="#">[[${t[0]}]]</a><th:block
                                             th:unless="${i.last}">, </th:block></th:block>
                     </div>
+                    <div class="author" th:if="${config.site_author_index_shown}"
+                                th:with="p_author=(${p.author != null}
+                                        ? ${p.author}
+                                        : (${config.site_owner_shown && config.site_owner != null}
+                                                ? ${config.site_owner}
+                                                : ''))">[[${p_author}]]</div>
+                    <div class="timestamp"><time
+                                th:datetime="${#dates.format(p.date, 'yyyy-MM-dd')}">[[${#dates.format(p.date,
+                                        'dd MMMM yyyy')}]]</time></div>
                 </header>
                 <section class="text" th:if="${#strings.length(p.body) < max_length}"
                             th:utext="${p.body}"></section>
@@ -104,7 +104,7 @@
                             th:utext="${#strings.trim(#strings.substring(p.body, 0, max_length))} + ${trunc_indicator}"/>
             </article>
         </section>
-        <nav th:replace="~{pagination.thyme::pagination (${numPages})}"></nav>
+        <nav th:replace="~{pagination.thyme::pagination (${numPages}, ${curPageNum})}"></nav>
     </main>
 
     <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"></aside>
