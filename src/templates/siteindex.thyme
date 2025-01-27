@@ -89,7 +89,7 @@
         <nav th:replace="~{pagination.thyme::pagination (${numPages}, ${curPageNum})}"></nav>
     </main>
 
-    <aside th:replace="~{sidebar.thyme::sidebar (current_uri=${current_uri})}"></aside>
+    <aside th:replace="~{sidebar.thyme::sidebar (${current_uri})}"></aside>
 
     <footer th:replace="~{footer.thyme::footer}"></footer>
 </body>
