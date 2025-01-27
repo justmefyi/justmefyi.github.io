@@ -13,7 +13,7 @@
     </th:block>
 </th:block>
 <body onload="prettyPrint()"
-            th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : ''),
+            th:with="rootpath=(${#strings.isEmpty(content.rootpath)} ? '' : ${content.rootpath}),
                     current_uri=(|${rootpath}index.html|),
                             numPerPage=(${config.index_posts_per_page}),
                             numItems=(${#lists.size(pubContent)}),
