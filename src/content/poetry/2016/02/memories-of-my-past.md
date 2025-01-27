@@ -1,6 +1,6 @@
 title=Memories of My Past
 date=2016-02-24
-type=page
+type=post
 cat=poetry
 tags=2016,poetry,memories,pain,regret
 status=published

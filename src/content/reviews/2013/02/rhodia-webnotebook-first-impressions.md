@@ -1,6 +1,6 @@
 title=Rhodia Webnotebook: First Impressions
 date=2013-02-17
-type=page
+type=post
 cat=reviews
 tags=2013,paper,purchases,writing,reviews
 status=published

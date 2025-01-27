@@ -1,6 +1,6 @@
 title=Fabriano EcoQua Perfect Bound Notebook: First Impressions
 date=2013-02-17
-type=page
+type=post
 cat=reviews
 tags=2013,reviews,paper,purchases,writing
 status=published

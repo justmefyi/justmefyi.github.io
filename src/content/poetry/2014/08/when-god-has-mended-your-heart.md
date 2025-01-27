@@ -1,6 +1,6 @@
 title=When God Has Mended Your Heart
 date=2014-08-07
-type=page
+type=post
 cat=poetry
 tags=2014,poetry,growth,life,loss,love
 status=published

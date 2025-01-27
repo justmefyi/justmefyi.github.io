@@ -1,6 +1,6 @@
 title=Starting to Start Over
 date=2012-02-12
-type=page
+type=post
 cat=poetry
 tags=2012,love,poetry
 status=published

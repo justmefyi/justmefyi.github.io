@@ -1,6 +1,6 @@
 title=Winter
 date=1993-02-04
-type=page
+type=post
 cat=poetry
 tags=1993,highschool,poetry,haiku,seasons
 status=published

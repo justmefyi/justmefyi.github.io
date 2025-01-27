@@ -1,6 +1,6 @@
 title=My Pain Will Never Stop
 date=2004-08-11
-type=page
+type=post
 cat=poetry
 tags=2004,loss,love,poetry
 status=published

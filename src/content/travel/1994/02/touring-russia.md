@@ -1,6 +1,6 @@
 title=Touring Russia
 date=1994-02-04
-type=page
+type=post
 cat=travel
 tags=1994,travel,USSR,Moscow,Smolensk,Leningrad,St. Petersburg,Russia,Minsk,Belarus,Kiev,Kyiv,Odessa,Ukraine,Europe
 status=published

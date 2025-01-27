@@ -1,6 +1,6 @@
 title=The Young Lady Named Maggie
 date=1993-02-04
-type=page
+type=post
 cat=poetry
 tags=1993,highschool,poetry,limerick
 status=published

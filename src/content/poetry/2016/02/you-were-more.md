@@ -1,6 +1,6 @@
 title=You Were More
 date=2016-02-18
-type=page
+type=post
 cat=poetry
 tags=2016,poetry,friendships,loss,love,regret,relationships
 status=published

@@ -1,6 +1,6 @@
 title=The Day and The Night
 date=1993-02-04
-type=page
+type=post
 cat=poetry
 tags=1993,highschool,poetry
 status=published

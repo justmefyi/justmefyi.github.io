@@ -1,6 +1,6 @@
 title=Love Deeply
 date=2016-02-14
-type=page
+type=post
 cat=poetry
 tags=2016,poetry,hope,hurt,love,pain,relationships
 status=published

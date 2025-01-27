@@ -1,6 +1,6 @@
 title=Movie "The Bridge"
 date=2008-06-01
-type=page
+type=post
 cat=reviews
 tags=2008,reviews,documentaries,life,movies,suicide
 status=published

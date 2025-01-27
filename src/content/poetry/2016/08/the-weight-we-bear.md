@@ -1,6 +1,6 @@
 title=The Weight We Bear
 date=2016-08-14
-type=page
+type=post
 cat=poetry
 tags=2016,poetry,hope,inspiration,struggles
 status=published

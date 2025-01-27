@@ -1,6 +1,6 @@
 title=Now, Here We Are
 date=2016-02-22
-type=page
+type=post
 cat=poetry
 tags=2016,poetry,friendships,loss,regret,relationships
 status=published

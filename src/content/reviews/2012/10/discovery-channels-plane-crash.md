@@ -1,6 +1,6 @@
 title=Discovery Channel's "Plane Crash"
 date=2012-10-08
-type=page
+type=post
 cat=reviews
 tags=2012,airplanes,discovery,documentaries,flying,life,recommended,safety,television,travel,tv
 status=published

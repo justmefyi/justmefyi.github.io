@@ -1,6 +1,6 @@
 title=A Visit To Babi Yar
 date=1994-02-04
-type=page
+type=post
 cat=travel
 tags=1994,history,holocaust,Kiev,Kyiv,life,travel,Ukraine,USSR,WWII,change
 status=published

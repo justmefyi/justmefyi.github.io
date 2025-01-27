@@ -1,6 +1,6 @@
 title=You Will Never Know
 date=2004-08-11
-type=page
+type=post
 cat=poetry
 tags=2004,love,poetry
 status=published

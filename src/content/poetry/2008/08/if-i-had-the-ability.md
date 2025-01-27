@@ -1,6 +1,6 @@
 title=If I Had The Ability
 date=2008-08-11
-type=page
+type=post
 cat=poetry
 tags=2008,poetry,love
 status=published

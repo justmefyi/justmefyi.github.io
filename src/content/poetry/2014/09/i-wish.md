@@ -1,6 +1,6 @@
 title=I Wish...
 date=2014-09-25
-type=page
+type=post
 cat=poetry
 tags=2014,poetry,distance,love,relationships,wishes
 status=published

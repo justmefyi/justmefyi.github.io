@@ -1,6 +1,6 @@
 title=What I Know Now
 date=2017-02-01
-type=page
+type=post
 cat=poetry
 tags=2017,poetry,advice,hope,life,musings
 status=published

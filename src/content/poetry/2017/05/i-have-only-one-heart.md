@@ -1,6 +1,6 @@
 title=I Have Only One Heart
 date=2017-05-29 15:48
-type=page
+type=post
 cat=poetry
 tags=2017,love,hurt,pain,survival
 status=published

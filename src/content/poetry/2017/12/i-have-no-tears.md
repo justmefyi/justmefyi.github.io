@@ -1,6 +1,6 @@
 title=I Have No Tears
 date=2017-12-05 12:33
-type=page
+type=post
 cat=poetry
 tags=2017,joy,memories,tears
 status=published

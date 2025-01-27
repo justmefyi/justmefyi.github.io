@@ -1,6 +1,6 @@
 title=The Letter
 date=2014-08-30
-type=page
+type=post
 cat=prose
 tags=2014,prose,arthritis,fiction,loss,love,paper,short story
 status=published

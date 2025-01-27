@@ -1,6 +1,6 @@
 title=Searching for lost feelings
 date=2015-01-17
-type=page
+type=post
 cat=poetry
 tags=2015,hope,loss,love,pain,relationships,poetry
 status=published

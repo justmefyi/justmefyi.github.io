@@ -1,6 +1,6 @@
 title=Taking a Step Back
 date=2014-12-17
-type=page
+type=post
 cat=poetry
 tags=2014,poetry,life,rebirth,rediscovery
 status=published
